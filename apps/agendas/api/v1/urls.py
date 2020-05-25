@@ -33,7 +33,7 @@ urlpatterns = [
         'appointments/<uuid:appointment_uuid>/',
         AppointmentsViewSet.as_view({
             'get': 'retrieve',
-            'delete': 'destroy',
+            'delete': 'cancel',
         }),
         name='appointment',
     ),

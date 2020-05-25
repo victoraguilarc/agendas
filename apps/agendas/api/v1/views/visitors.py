@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
-
-
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.viewsets import ViewSet
+
+from apps.agendas.api.v1.serializers.appointments import AppointmentSerializer
+from apps.agendas.selectors.appointments import AppointmentSelector
+from apps.contrib.api.viewsets import PermissionViewSet
 
 
-class VisitorsViewSet(ViewSet):
-    """Process a google token_id login."""
+class VisitorsViewSet(PermissionViewSet):
+    permission_classes = [IsAuthenticated]
 
     def appointments(self, request, **kwargs):
-        """It shows the appointments to the customers."""
-        return Response({'status': 'OK'})
+        """It shows the visitors' appointments."""
+
+        appointments = AppointmentSelector.user_appointments(request.user)
+        return Response(AppointmentSerializer(appointments, many=True).data)

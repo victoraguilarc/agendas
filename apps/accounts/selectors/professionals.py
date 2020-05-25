@@ -19,3 +19,10 @@ class ProfessionalSelector(object):
             return ProfessionalProfile.objects.get(_filter)
         except ProfessionalProfile.DoesNotExist:
             raise NotFound(**PROFESSIONAL_NOT_FOUND)
+
+    @classmethod
+    def get_by_uuid(cls, professional_uuid):
+        try:
+            return ProfessionalProfile.objects.get(uuid=professional_uuid)
+        except ProfessionalProfile.DoesNotExist:
+            raise NotFound(**PROFESSIONAL_NOT_FOUND)
