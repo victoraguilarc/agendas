@@ -15,15 +15,18 @@ admin.site.site_title = 'Wise Admin'
 admin.site.index_title = 'Wise Admin'
 
 urlpatterns = [
-    # Django ADMIN
+    # Admin
     path(settings.ADMIN_URL, admin.site.urls),
 
     # Landing Page
     path('', TemplateView.as_view(template_name='home.html')),
 
     # Accounts
-    path('api/', include('apps.accounts.api.urls', namespace='api-accounts')),  # api
-    path('', include('apps.accounts.urls', namespace='accounts')),  # views
+    path('api/', include('apps.accounts.api.urls', namespace='api-accounts')),
+    path('', include('apps.accounts.urls', namespace='accounts')),
+
+    # Agendas
+    path('api/', include('apps.agendas.api.urls', namespace='api-agendas')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

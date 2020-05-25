@@ -15,29 +15,29 @@ class Appointment(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
         on_delete=models.CASCADE,
         verbose_name=_('Agenda'),
     )
-
+    visitor = models.ForeignKey(
+        'accounts.User',
+        on_delete=models.CASCADE,
+        verbose_name=_('Visitor'),
+    )
     status = models.CharField(
         verbose_name=_('Status'),
         max_length=50,
         choices=AppointmentStatus.choices(),
         default=AppointmentStatus.REQUESTED,
     )
-
     site = models.CharField(
         verbose_name=_('Site'),
         max_length=50,
         choices=AppointmentSite.choices(),
         default=AppointmentSite.IN_PLACE,
     )
-
     start_datetime = models.DateTimeField(
         verbose_name=_('Start'),
     )
-
     duration = models.PositiveIntegerField(
         verbose_name=_('Duration'),
     )
-
     # this field is JSON to add more flexibility to appointments
     payload = JSONField(
         encoder=DjangoJSONEncoder,

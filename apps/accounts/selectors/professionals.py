@@ -9,7 +9,7 @@ from apps.agendas.response_codes import PROFESSIONAL_NOT_FOUND
 class ProfessionalSelector(object):
 
     @classmethod
-    def get_active(cls):
+    def get_active_professionals(cls):
         return ProfessionalProfile.objects.filter(user__is_active=True)
 
     @classmethod
@@ -19,7 +19,3 @@ class ProfessionalSelector(object):
             return ProfessionalProfile.objects.get(_filter)
         except ProfessionalProfile.DoesNotExist:
             raise NotFound(**PROFESSIONAL_NOT_FOUND)
-
-    @classmethod
-    def get_appointments(cls, professional):
-        return Appointment.objects.filter(agenda__owner=professional.user)

@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-
-from apps.contrib.models.mixins import TimeStampedModelMixin
-from apps.accounts.models.choices import Specialties
-
 from django.utils.translation import ugettext_lazy as _
 
+from apps.contrib.models.mixins import TimeStampedModelMixin, UUIDPrimaryKeyModelMixin
+from apps.accounts.models.choices import Specialties
 
-class ProfessionalProfile(TimeStampedModelMixin):
+
+class ProfessionalProfile(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
 
     specialty = models.CharField(
         max_length=25,

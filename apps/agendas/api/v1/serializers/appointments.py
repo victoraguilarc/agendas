@@ -1,19 +1,22 @@
 # -*- coding: utf-8 -*-
 
-from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
-from rest_framework.serializers import Serializer
+from rest_framework.serializers import ModelSerializer
 
-from apps.accounts import response_codes
-from apps.accounts.models import User
+from apps.agendas.models import Appointment
 
 
-class EmailSerializer(Serializer):
+class AppointmentSerializer(ModelSerializer):
     """Serialier to request and validate an email."""
 
-    email = serializers.EmailField()
-
-    def validate_email(self, email):
-        if User.objects.filter(email=email).exists():
-            raise ValidationError(**response_codes.EMAIL_ALREDY_USED)
-        return email
+    class Meta:
+        model = Appointment
+        fields = (
+            'agenda',
+            'visitor',
+            'status',
+            'site',
+            'start_datetime',
+            'duration',
+            'payload',
+        )
+        readonly_fields = fields
