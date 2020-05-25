@@ -10,10 +10,10 @@ from apps.contrib.models.mixins import TimeStampedModelMixin, UUIDPrimaryKeyMode
 
 
 class Appointment(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
-    schedule = models.ForeignKey(
+    agenda = models.ForeignKey(
         'Agenda',
         on_delete=models.CASCADE,
-        verbose_name=_('Schedule'),
+        verbose_name=_('Agenda'),
     )
 
     status = models.CharField(

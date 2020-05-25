@@ -19,9 +19,10 @@ class AgendaAdmin(admin.ModelAdmin):
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = (
-        'schedule',
+        'agenda',
         'status',
         'start_datetime',
         'duration',
     )
+    raw_id_fields = ('agenda', )
 

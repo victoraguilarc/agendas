@@ -23,8 +23,9 @@ class Agenda(TimeStampedModelMixin):
         verbose_name=_('Duration'),
         help_text=_('This time is in minutes'),
     )
+
     auto_confirmation = models.BooleanField(
-        verbose_name=_('Is confirmed automatically?'),
+        verbose_name=_('Auto Confirmation?'),
         default=True,
     )
 
