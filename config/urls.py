@@ -23,7 +23,7 @@ urlpatterns = [
 
     # Accounts
     path('api/', include('apps.accounts.api.urls', namespace='api-accounts')),  # api
-    path('', include('apps.accounts.urls', namespace='accounts')),  # transactions
+    path('', include('apps.accounts.urls', namespace='accounts')),  # views
 
     # Sync
     path('health/', include('health_check.urls')),
