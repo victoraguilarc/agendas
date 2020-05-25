@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from apps.contrib.models import BaseEnum
 
 from django.utils.translation import ugettext_lazy as _
+from apps.contrib.models.enums import BaseEnum
+from apps.contrib.utils.choices import ListableStrPropsMixin
 
 
 class Platform(BaseEnum):
@@ -32,4 +33,18 @@ class ActionCategory(BaseEnum):
         return (
             (cls.CONFIRM_EMAIL.value, _('Confirm e-mail')),
             (cls.RESET_PASSWORD.value, _('Reset Password')),
+        )
+
+
+class Specialties(ListableStrPropsMixin):
+    """Contains all role vehicle commands."""
+
+    PEDIATRICIAN = 'pediatrician'
+    GENERAL_DOCTOR = 'general_doctor'
+
+    @classmethod
+    def choices(cls):
+        return (
+            (cls.PEDIATRICIAN, _('PEDIATRICIAN')),
+            (cls.GENERAL_DOCTOR, _('GENERAL DOCTOR')),
         )

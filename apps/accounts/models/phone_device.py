@@ -2,15 +2,16 @@
 
 from django.db import models
 
-from apps.contrib.models import TimeStampedModelMixin, UUIDPrimaryKeyModelMixin
+
 from apps.accounts.models.choices import Platform
 from apps.accounts.models.managers.phone_device import PhoneDeviceManager
 
 from django.utils.translation import ugettext_lazy as _
 
+from apps.contrib.models.mixins import UUIDPrimaryKeyModelMixin, TimeStampedModelMixin
+
 
 class PhoneDevice(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
-    """Represents the user phone device."""
 
     token = models.TextField(
         verbose_name=_('Device ID'),
