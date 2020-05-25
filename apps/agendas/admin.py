@@ -7,13 +7,13 @@ from apps.agendas.models import Agenda, Appointment
 @admin.register(Agenda)
 class AgendaAdmin(admin.ModelAdmin):
     list_display = (
-        'user',
+        'owner',
         'start_time',
         'end_time',
         'duration',
         'auto_confirmation',
     )
-    raw_id_fields = ('user', )
+    raw_id_fields = ('owner', )
 
 
 @admin.register(Appointment)

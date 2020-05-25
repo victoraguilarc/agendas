@@ -1,14 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-"""Django settings for server project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/2.2/topics/settings/
-For the full list of settings and their config, see
-https://docs.djangoproject.com/en/2.2/ref/settings/
-"""
-
 from typing import Dict, List, Tuple, Union
 from os.path import join
 
@@ -45,24 +37,12 @@ DJANGO_APPS: Tuple[str, ...] = (
 )
 
 THIRD_PARTY_APPS: Tuple[str, ...] = (
-    # Security:
-
-    # Health checks:
-    # You may want to enable other checks as well,
-    # see: https://github.com/KristianOellegaard/django-health-check
-    'health_check',
-    'health_check.db',
-    'health_check.cache',
-    'health_check.storage',
-
     'constance',
 
     # API Rest
     'corsheaders',
     'rest_framework',
-    'rest_framework_api_key',
     'rest_framework_simplejwt.token_blacklist',
-    'django_http_referrer_policy',
 
     # Async Tasks
     'django_celery_beat',
@@ -86,10 +66,9 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 
 MIDDLEWARE: Tuple[str, ...] = (
-    'corsheaders.middleware.CorsMiddleware',  # CORS
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
-    'django_feature_policy.FeaturePolicyMiddleware',  # django-feature-policy
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -97,9 +76,6 @@ MIDDLEWARE: Tuple[str, ...] = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    # Django HTTP Referrer Policy:
-    'django_http_referrer_policy.middleware.ReferrerPolicyMiddleware',
 )
 
 
@@ -235,12 +211,6 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 
 X_FRAME_OPTIONS = 'DENY'
-
-# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Syntax
-REFERRER_POLICY = 'no-referrer'
-
-# https://github.com/adamchainz/django-feature-policy#setting
-FEATURE_POLICY: Dict[str, Union[str, List[str]]] = {}  # noqa: TAE002
 
 
 # Timeouts

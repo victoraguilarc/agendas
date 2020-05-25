@@ -1,0 +1,121 @@
+[{
+	"model": "accounts.professionalprofile",
+	"pk": 1,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Ju\u00e1rez",
+		"verified": true,
+		"user": 2
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 2,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. Roma",
+		"verified": true,
+		"user": 3
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 3,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Polanco",
+		"verified": true,
+		"user": 4
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 4,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. Tlatelolco",
+		"verified": true,
+		"user": 5
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 5,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. del Carmen",
+		"verified": true,
+		"user": 6
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 6,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Centro",
+		"verified": true,
+		"user": 7
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 7,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. Ju\u00e1rez",
+		"verified": true,
+		"user": 8
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 8,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Roma Sur",
+		"verified": true,
+		"user": 9
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 9,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Polanco",
+		"verified": true,
+		"user": 10
+	}
+},{
+	"model": "accounts.professionalprofile",
+	"pk": 10,
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. del Carmen",
+		"verified": true,
+		"user": 11
+	}
+}]

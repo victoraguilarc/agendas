@@ -7,16 +7,17 @@ from apps.contrib.models.mixins import TimeStampedModelMixin
 
 
 class Agenda(TimeStampedModelMixin):
-    user = models.OneToOneField(
+    owner = models.OneToOneField(
         'accounts.User',
         on_delete=models.CASCADE,
+        verbose_name=_('Owner'),
     )
     start_time = models.TimeField(
-        verbose_name=_('Start Hour'),
+        verbose_name=_('Start'),
     )
 
     end_time = models.TimeField(
-        verbose_name=_('End Hour'),
+        verbose_name=_('End'),
     )
 
     duration = models.IntegerField(
@@ -30,7 +31,7 @@ class Agenda(TimeStampedModelMixin):
     )
 
     def __str__(self):
-        return str(self.user)
+        return str(self.owner)
 
     class Meta:
         db_table = 'agendas'

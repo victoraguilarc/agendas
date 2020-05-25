@@ -25,9 +25,6 @@ urlpatterns = [
     path('api/', include('apps.accounts.api.urls', namespace='api-accounts')),  # api
     path('', include('apps.accounts.urls', namespace='accounts')),  # views
 
-    # Sync
-    path('health/', include('health_check.urls')),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

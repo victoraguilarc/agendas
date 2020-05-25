@@ -1,20 +1,210 @@
 [{
-    "model": "accounts.user",
-    "pk": 1,
-    "fields": {
-        "password": "bcrypt_sha256$$2b$12$BogGYAh3m4ihpvS5IRP03ODJBdpZb4Clnd7JsVKsbxE.zD9Z.AqC.",
-        "last_login": "2020-01-15T16:56:28.873Z",
-        "is_superuser": true,
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2020-01-15T16:56:15.257Z",
-        "username": "admin",
-        "email": "admin@xiberty.com",
-        "photo": "",
-        "first_name": "Super",
-        "last_name": "Admin",
-        "lang": "es",
-        "groups": [],
-        "user_permissions": []
-    }
+	"model": "accounts.user",
+	"pk": 1,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$BogGYAh3m4ihpvS5IRP03ODJBdpZb4Clnd7JsVKsbxE.zD9Z.AqC.",
+		"last_login": "2020-05-25T06:58:06.274Z",
+		"is_superuser": true,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-01-15T16:56:15.257Z",
+		"username": "admin",
+		"email": "admin@codegramming.xyz",
+		"first_name": "Super",
+		"last_name": "Admin",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": []
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 2,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "dario",
+		"email": "dario@codegramming.xyz",
+		"first_name": "Dario",
+		"last_name": "Jurado",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 3,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "luz",
+		"email": "luz@codegramming.xyz",
+		"first_name": "Luz Marina",
+		"last_name": "Arevalo",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 4,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "jose",
+		"email": "jose@codegramming.xyz",
+		"first_name": "José Pablo",
+		"last_name": "Piñero",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 5,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "jennifer",
+		"email": "jennifer@codegramming.xyz",
+		"first_name": "Jennifer",
+		"last_name": "Arcos",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 6,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "sofia",
+		"email": "sofia@codegramming.xyz",
+		"first_name": "Sofia",
+		"last_name": "Araujo",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 7,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "marvin",
+		"email": "marvin@codegramming.xyz",
+		"first_name": "Marvin",
+		"last_name": "Neira",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 8,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "carmen",
+		"email": "carmen@codegramming.xyz",
+		"first_name": "Carmen",
+		"last_name": "Martinez",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 9,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "linda",
+		"email": "linda@codegramming.xyz",
+		"first_name": "Linda",
+		"last_name": "Aguilar",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 10,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "ruby",
+		"email": "ruby@codegramming.xyz",
+		"first_name": "Ruby",
+		"last_name": "Peñaranda",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
+}, {
+	"model": "accounts.user",
+	"pk": 11,
+	"fields": {
+		"password": "bcrypt_sha256$$2b$12$zAjxVNYEm0HDtm4dfsqmZ.7hbP2a52u5ILdLHLZN3m5xj5V.KOQRS",
+		"last_login": null,
+		"is_superuser": false,
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-05-25T07:00:30.853Z",
+		"username": "tomas",
+		"email": "tomas@codegramming.xyz",
+		"first_name": "Tomás",
+		"last_name": "Gutierrez",
+		"photo": "",
+		"lang": "es",
+		"groups": [],
+		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+	}
 }]

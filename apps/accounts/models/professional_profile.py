@@ -8,12 +8,27 @@ from apps.accounts.models.choices import Specialties
 from django.utils.translation import ugettext_lazy as _
 
 
-class UserProfile(TimeStampedModelMixin):
+class ProfessionalProfile(TimeStampedModelMixin):
 
     specialty = models.CharField(
         max_length=25,
         choices=Specialties.choices(),
         default=Specialties.GENERAL_DOCTOR,
+    )
+
+    title = models.TextField(
+        verbose_name=_('Title'),
+    )
+
+    location = models.CharField(
+        verbose_name=_('Locatión'),
+        max_length=255,
+        blank=True, null=True,
+    )
+
+    verified = models.BooleanField(
+        verbose_name=_('Is verified?'),
+        default=False,
     )
 
     user = models.OneToOneField(
@@ -23,10 +38,10 @@ class UserProfile(TimeStampedModelMixin):
     )
 
     def __str__(self):
-        return self.user.email
+        return str(self.user)
 
     class Meta:
-        db_table = 'user_profiles'
-        verbose_name = _('User Profile')
-        verbose_name_plural = _('User Profiles')
+        db_table = 'professional_profiles'
+        verbose_name = _('Professional')
+        verbose_name_plural = _('Professionals')
         app_label = 'accounts'
