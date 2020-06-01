@@ -60,10 +60,3 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = False
-
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-
-# DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
-# STATICFILES_STORAGE = 'django_s3_storage.storage.StaticS3Storage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

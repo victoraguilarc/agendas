@@ -1,12 +1,9 @@
 version: '3.4'
 
-volumes:
-  postgres_data:
-  django_data:
-
 services:
   django: &django
     image: vicobits/yema-challenge:latest
+    restart: unless-stopped
     depends_on:
       - postgres
       - redis
@@ -16,9 +13,10 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - django_data:/htdocs
+      - /srv/agendas/htdocs:/htdocs
 
   redis:
+    restart: unless-stopped
     image: redis:5
 
   celeryworker:
@@ -38,8 +36,9 @@ services:
     command: /start-flower
 
   postgres:
+    restart: unless-stopped
     image: postgres:11
     env_file:
       - .envs/prod/postgres
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - /srv/agendas/db:/var/lib/postgresql/data
