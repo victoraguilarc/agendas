@@ -1,0 +1,42 @@
+version: '3.4'
+
+volumes:
+  postgres_data:
+
+services:
+  django: &django
+    image: vicobits/yema-challenge:latest
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .envs/prod/django
+      - .envs/prod/postgres
+    ports:
+    - "8000:8000"
+
+  redis:
+    image: redis:5
+
+  celeryworker:
+    <<: *django
+    ports: []
+    command: /start-celeryworker
+
+  celerybeat:
+    <<: *django
+    ports: []
+    command: /start-celerybeat
+
+  flower:
+    <<: *django
+    ports:
+      - "5555:5555"
+    command: /start-flower
+
+  postgres:
+    image: postgres:11
+    env_file:
+      - .envs/prod/postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data

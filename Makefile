@@ -191,7 +191,7 @@ compile_locales:
 
 production_up:
 	@echo "Server up..."
-	docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+	docker-compose -f docker-compose.prod.yml up
 
 report_coverage:
 	@echo "Running coverage report"

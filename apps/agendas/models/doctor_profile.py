@@ -65,7 +65,7 @@ class DoctorProfile(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
         return str(self.user)
 
     class Meta:
-        db_table = 'professional_profiles'
-        verbose_name = _('Professional')
-        verbose_name_plural = _('Professionals')
+        db_table = 'doctor_profiles'
+        verbose_name = _('Doctor')
+        verbose_name_plural = _('Doctors')
         app_label = 'agendas'
