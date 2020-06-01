@@ -41,7 +41,7 @@
               <div class="doctor-img">
                   <img src="{% if doctor.user.photo_url %}{{ doctor.user.photo_url }}{% else %}{% static 'app/img/avatars/anon.png' %}{% endif %}"
                        class="img-fluid" alt="{{ doctor.user.full_name }}"
-                       width="300" height="300" />
+                       width="460" height="300" />
               </div>
               <div class="doc-info-cont">
                 <h4 class="doc-name">{{ doctor.user.full_name }}</h4>
@@ -60,8 +60,8 @@
                 </div>
 
                 <div class="clinic-services">
-                  <span>Dental Fillings</span>
-                  <span>Teeth Whitneing</span>
+                  <span>General Medicine</span>
+                  <span>Intensive Care</span>
                 </div>
               </div>
             </div>
@@ -72,16 +72,15 @@
                   <li><i class="far fa-comment"></i> 0 Feedback</li>
                   <li>
                     <i class="fas fa-map-marker-alt"></i>
-                    {% if doctor.user.agenda %}
-                      {{ doctor.user.agenda.fee }} MXN / {{ doctor.user.agenda.duration }}min
-                    {% else %}
-                      {% trans 'Unavailable' %}
-                    {% endif %}
-
+                    {{ doctor.location }}
                   </li>
                   <li>
                     <i class="far fa-money-bill-alt"></i>
-                    $100 per hour
+                    {% if doctor.fee %}
+                      {{ doctor.fee }} MXN / {{ doctor.consultation_duration }}min
+                    {% else %}
+                      {% trans 'Unavailable' %}
+                    {% endif %}
                   </li>
                 </ul>
               </div>

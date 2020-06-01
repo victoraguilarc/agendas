@@ -2915,10 +2915,10 @@ html.menu-opened body {
     max-width: 200px;
 }
 .doctor-img {
-    -ms-flex: 0 0 150px;
-    flex: 0 0 150px;
+    -ms-flex: 0 0 240px;
+    flex: 0 0 240px;
     margin-right: 20px;
-    width: 150px;
+    width: 250px;
 }
 .doctor-img img {
 	border-radius: 5px;

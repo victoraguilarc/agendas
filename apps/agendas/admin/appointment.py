@@ -2,18 +2,18 @@
 
 from django.contrib import admin
 from django.http import HttpResponseRedirect
-from django.template.response import TemplateResponse
-from django.urls import reverse, path, re_path
+from django.urls import reverse, path
 from django.utils.html import format_html
 
-from apps.agendas.admin.forms.appointment_reminder import AppointmentReminderForm
 from apps.agendas.models import Appointment
+from apps.agendas.services.appointment import AppointmentService
 
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = (
         'doctor',
+        'visitor',
         'status',
         'date',
         'time',
@@ -33,45 +33,15 @@ class AppointmentAdmin(admin.ModelAdmin):
         return custom_urls + urls
 
     def process_reminder(self, request, appointment_uuid, *args, **kwargs):
-        return self.process_action(
-            request=request,
-            appointment_uuid=appointment_uuid,
-            action_form=AppointmentReminderForm,
-            action_title='Reminder',
-        )
-
-    def process_action(self, request, appointment_uuid, action_form, action_title):
         appointment = self.get_object(request, appointment_uuid)
-        if request.method != 'POST':
-            form = action_form()
-        else:
-            form = action_form(request.POST)
-            if form.is_valid():
-                try:
-                    form.save(appointment, request.user)
-                except Exception as e:
-                    # If save() raised, the form will a have a non
-                    # field error containing an informative message.
-                    pass
-                else:
-                    self.message_user(request, 'Success')
-                    url = reverse(
-                        'admin:agendas_appointment_change',
-                        args=[str(appointment.uuid)],
-                        current_app=self.admin_site.name,
-                    )
-                    return HttpResponseRedirect(url)
+        AppointmentService.send_reminder(appointment)
 
-        context = self.admin_site.each_context(request)
-        context['opts'] = self.model._meta
-        context['form'] = form
-        context['appoinment'] = appointment
-        context['title'] = action_title
-        return TemplateResponse(
-            request,
-            'admin/account/account_action.html',
-            context,
+        self.message_user(request, 'Reminder sended to {0}!'.format(appointment.visitor.email))
+        url = reverse(
+            'admin:agendas_appointment_changelist',
+            current_app=self.admin_site.name,
         )
+        return HttpResponseRedirect(url)
 
     def appointment_actions(self, appointment):
         return format_html(

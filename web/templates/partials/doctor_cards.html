@@ -5,8 +5,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-header ">
-          <h2>Book Our Doctor</h2>
-          <p>Lorem Ipsum is simply dummy text </p>
+          <h2>{% trans 'Book Our Doctor' %}</h2>
+          <p>{% trans 'whenever you want' %}</p>
         </div>
       </div>
     </div>
@@ -16,8 +16,9 @@
         <div class="col-lg-2">
           <div class="profile-widget" style="margin-bottom: 2rem;">
             <div class="doc-img">
-              <a href="doctor-profile.html">
-                <img class="img-fluid" alt="Professional" src="{% static 'app/img/doctors/doctor-01.jpg' %}">
+              <a href="{% url 'agendas:doctor-agenda' doctor_uuid=doctor.uuid %}">
+                <img class="img-fluid" alt="Professional"
+                     src="{% if doctor.user.photo_url %}{{ doctor.user.photo_url }}{% else %}{% static 'app/img/doctors/doctor-01.jpg' %}{% endif %}">
               </a>
               <a href="javascript:void(0)" class="fav-btn">
                 <i class="far fa-bookmark"></i>
@@ -25,7 +26,7 @@
             </div>
             <div class="pro-content">
               <h3 class="title">
-                <a href="doctor-profile.html">{{ doctor.user.full_name }}</a>
+                <a href="{% url 'agendas:doctor-agenda' doctor_uuid=doctor.uuid %}">{{ doctor.user.full_name }}</a>
                 {% if doctor.verified %}
                 <i class="fas fa-check-circle verified"></i>
                 {% endif %}
