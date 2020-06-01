@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import IntegrityError
 
-from apps.agendas.selectors.professionals import DoctorSelector
-from apps.agendas.models import Appointment, AppointmentSite
+from apps.agendas.selectors.doctors import DoctorSelector
+from apps.agendas.models import Appointment, AppointmentSite, AppointmentStatus
 from apps.agendas.response_codes import UNAVAILABLE_DATETIME
 from apps.contrib.api.exceptions import SimpleValidationError
 
@@ -10,8 +10,9 @@ from apps.contrib.api.exceptions import SimpleValidationError
 class AppointmentService(object):
 
     @classmethod
-    def create(cls, professional_uuid, visitor, date, time, site=AppointmentSite.IN_PLACE):
-        doctor = DoctorSelector.get_by_uuid(professional_uuid)
+    def create(cls, doctor_uuid, visitor, date, time, site=AppointmentSite.IN_PLACE):
+        doctor = DoctorSelector.get_by_uuid(doctor_uuid)
+        status = AppointmentStatus.ACCEPTED if doctor.auto_confirmation else AppointmentStatus.REQUESTED
 
         try:
             return Appointment.objects.create(
@@ -19,6 +20,7 @@ class AppointmentService(object):
                 doctor=doctor,
                 visitor=visitor,
                 site=site,
+                status=status,
                 date=date,
                 time=time,
             )

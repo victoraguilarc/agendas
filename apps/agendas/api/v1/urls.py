@@ -16,7 +16,7 @@ urlpatterns = [
     path(
         'doctors/',
         DoctorsViewSet.as_view({'get': 'list'}),
-        name='professionals',
+        name='doctors',
     ),
 
     path(

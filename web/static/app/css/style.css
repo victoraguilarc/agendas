@@ -5297,13 +5297,7 @@ html.menu-opened body {
 	33. Voice call
 -----------------------*/
 
-.modal-open .main-wrapper {
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    filter: blur(1px);
-}
+
 .call-main-row {
 	bottom: 0;
 	left: 0;

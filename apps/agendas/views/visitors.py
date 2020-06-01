@@ -7,7 +7,7 @@ from apps.agendas.selectors.appointments import AppointmentSelector
 
 
 class VisitorProfileView(LoginRequiredMixin, TemplateView):
-    template_name = 'visitor.html'
+    template_name = 'patient.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()

@@ -1,7 +1,7 @@
 new Vue({
-  el: '#professional',
+  el: '#doctor',
   data: {
-    professional_uuid: PROFESSIONAL_UUID,
+    doctor_uuid: DOCTOR_UUID,
     week_days: WEEK,
     selected: {
       date: null,
@@ -9,11 +9,16 @@ new Vue({
     },
     currentYear: CURRENT_YEAR,
     currentWeek: CURRENT_WEEK,
+    successModal: null,
+    successAppointment: null,
   },
   computed: {
 
   },
   methods: {
+    handleGoProfile: function(){
+      window.location.href = "/profile/";
+    },
     matchSelected: function (date, time) {
       return this.selected.date === date && this.selected.time === time;
     },
@@ -26,7 +31,7 @@ new Vue({
     handleNextWeek: function () {
       const self = this;
       const nextWeek = this.currentWeek + 1;
-      client.get(`/professionals/${this.professional_uuid}/calendar/?week=${nextWeek}`)
+      client.get(`/professionals/${this.doctor_uuid}/calendar/?week=${nextWeek}`)
       .then(function (response) {
         self.week_days = response.data;
         self.currentWeek = nextWeek;
@@ -42,7 +47,7 @@ new Vue({
     handlePreviousWeek: function () {
       const self = this;
       const previousWeek = this.currentWeek - 1;
-      client.get(`/professionals/${this.professional_uuid}/calendar/?week=${previousWeek}`)
+      client.get(`/professionals/${this.doctor_uuid}/calendar/?week=${previousWeek}`)
       .then(function (response) {
         self.week_days = response.data;
         self.currentWeek = previousWeek;
@@ -56,15 +61,19 @@ new Vue({
       });
     },
     handleCreateAppointment: function (e) {
+      // console.log(this.$refs.successModal);
       const self = this;
       const payload = {
-        professional: this.professional_uuid,
+        doctor_uuid: this.doctor_uuid,
         date: this.selected.date,
         time: this.selected.time,
       }
-      client.post(`/appointments/`, payload)
+      client.post('/appointments/', payload)
       .then(function (response) {
-        alert('CREADO!')
+        self.week_days = response.data.week_days;
+        self.successAppointment = response.data.appointment;
+        self.successModal.modal('show');
+        self.selected = { date: null, time: null };
       })
       .catch(function (error) {
         // handle error
@@ -78,5 +87,7 @@ new Vue({
   },
   mounted: function () {
     console.log('MOUNTED!')
+    this.successModal = $(this.$refs.successModal);
+    console.log(this.successModal);
   }
 })

@@ -1,0 +1,111 @@
+{% extends 'layouts/base_app.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'Professional Profile' %}{% endblock %}
+{% block content %}
+  {% include "partials/header.html" %}
+
+
+
+  <!-- Page Content -->
+  <div class="content" >
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+          <!-- Profile Sidebar -->
+          <div class="profile-sidebar" style="margin-bottom: 15rem;">
+            <div class="widget-profile pro-widget-content">
+              <div class="profile-info-widget">
+                <a href="#" class="booking-doc-img">
+                  <img src="{% if user.photo_url %}{{ user.photo_url }}{% else %}{% static 'app/img/avatars/anon.png' %}{% endif %}" alt="User Image">
+                </a>
+                <div class="profile-det-info">
+                  <h3>{{ user.full_name }}</h3>
+
+                  <div class="patient-details">
+                    <h5 class="mb-0">
+                      {{ user.email }}
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-widget">
+              <nav class="dashboard-menu">
+                <ul>
+                  <li class="active">
+                    <a href="">
+                      <i class="fas fa-calendar-check"></i>
+                      <span>Appointments</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="index.html">
+                      <i class="fas fa-sign-out-alt"></i>
+                      <span>Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <!-- /Profile Sidebar -->
+        </div>
+
+        <div class="col-md-7 col-lg-8 col-xl-9">
+          <div class="appointments">
+            {% for appointment in appointments %}
+              <div class="appointment-list">
+
+                <div class="profile-info-widget">
+                  <a href="#" class="booking-doc-img">
+                    <img src="{% if user.photo_url %}{{ appointment.doctor.user.photo_url }}{% else %}{% static 'app/img/avatars/anon.png' %}{% endif %}"
+                         alt="{{ appointment.doctor.user.full_name }}">
+                  </a>
+                  <div class="profile-det-info">
+                    <h3>
+                        {{ appointment.doctor.user.full_name }}
+                    </h3>
+                    <div class="patient-details">
+                      <h5>
+                        <i class="far fa-clock"></i>
+                        {{ appointment.date }} - {{ appointment.time }}
+                      </h5>
+                      <h5>
+                        <i class="fas fa-map-marker-alt"></i>
+                        {{ appointment.doctor.location }}
+                      </h5>
+                      <h5>
+                        <i class="fas fa-envelope"></i>
+                        {{ appointment.doctor.user.email }}
+                      </h5>
+                      <h5 class="mb-0">
+                        <i class="fas fa-phone"></i>
+                        {% if appointment.doctor.user.phone %}
+                          {{ appointment.doctor.user.phone }}
+                        {% else %}
+                          {% trans 'Unavailable' %}
+                        {% endif %}
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="appointment-action">
+                  <a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
+                    {{ appointment.status|upper }}
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Page Content -->
+  {% include "partials/footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}

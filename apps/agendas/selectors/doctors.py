@@ -20,8 +20,8 @@ class DoctorSelector(object):
             raise NotFound(**DOCTOR_NOT_FOUND)
 
     @classmethod
-    def get_by_uuid(cls, professional_uuid):
+    def get_by_uuid(cls, doctor_uuid):
         try:
-            return DoctorProfile.objects.get(uuid=professional_uuid)
+            return DoctorProfile.objects.get(uuid=doctor_uuid)
         except DoctorProfile.DoesNotExist:
             raise NotFound(**DOCTOR_NOT_FOUND)

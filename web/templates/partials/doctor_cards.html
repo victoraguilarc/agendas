@@ -12,7 +12,7 @@
     </div>
 
     <div class="row">
-      {% for professional in professionals %}
+      {% for doctor in doctors %}
         <div class="col-lg-2">
           <div class="profile-widget" style="margin-bottom: 2rem;">
             <div class="doc-img">
@@ -25,12 +25,12 @@
             </div>
             <div class="pro-content">
               <h3 class="title">
-                <a href="doctor-profile.html">{{ professional.user.full_name }}</a>
-                {% if professional.verified %}
+                <a href="doctor-profile.html">{{ doctor.user.full_name }}</a>
+                {% if doctor.verified %}
                 <i class="fas fa-check-circle verified"></i>
                 {% endif %}
               </h3>
-              <p class="speciality">{{ professional.title }}</p>
+              <p class="speciality">{{ doctor.title }}</p>
               <div class="rating">
                 <i class="fas fa-star filled"></i>
                 <i class="fas fa-star filled"></i>
@@ -41,12 +41,12 @@
               </div>
               <ul class="available-info">
                 <li>
-                  <i class="fas fa-map-marker-alt"></i> {{ professional.location }}
+                  <i class="fas fa-map-marker-alt"></i> {{ doctor.location }}
                 </li>
                 <li>
                   <i class="far fa-money-bill-alt"></i>
-                  {% if professional.user.agenda %}
-                    {{ professional.user.agenda.fee }} MXN
+                  {% if doctor.user.agenda %}
+                    {{ doctor.user.agenda.fee }} MXN
                   {% else %}
                     {% trans "Not Available" %}
                   {% endif%}
@@ -55,7 +55,7 @@
               </ul>
               <div class="row row-sm">
                 <div class="col-12">
-                  <a href="{% url 'agendas:professional' professional_uuid=professional.uuid %}" class="btn view-btn">
+                  <a href="{% url 'agendas:doctor' doctor_uuid=doctor.uuid %}" class="btn view-btn">
                     {% trans "Book Now" %}
                   </a>
                 </div>

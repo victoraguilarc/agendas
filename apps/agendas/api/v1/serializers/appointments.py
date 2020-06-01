@@ -37,7 +37,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
 
 
 class CreateAppointmentSerializer(serializers.Serializer):
-    professional = serializers.UUIDField()
+    doctor_uuid = serializers.UUIDField()
     date = serializers.DateField()
     time = serializers.TimeField()
     site = serializers.ChoiceField(

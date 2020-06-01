@@ -72,6 +72,13 @@ class User(AbstractUser):
         null=True,
     )
 
+    phone = models.CharField(
+        verbose_name=_('Phone'),
+        max_length=100,
+        blank=True,
+        null=True,
+    )
+
     lang = models.CharField(
         verbose_name=_('Language'),
         choices=settings.LANGUAGES,

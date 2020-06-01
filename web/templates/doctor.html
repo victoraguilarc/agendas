@@ -1,7 +1,7 @@
 {% extends 'layouts/base_app.html' %}
 {% load static i18n %}
 
-{% block title %}{% trans 'Professional Profile' %}{% endblock %}
+{% block title %}{% trans 'Doctor Profile' %}{% endblock %}
 {% block content %}
   {% include "partials/header.html" %}
 
@@ -16,12 +16,12 @@
                 <a href="/">{% trans 'Home' %}</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                {% trans 'Professional Profile' %}
+                {% trans 'Doctor Profile' %}
               </li>
             </ol>
           </nav>
           <h2 class="breadcrumb-title">
-            {% trans 'Professional Profile' %}
+            {% trans 'Doctor Profile' %}
           </h2>
         </div>
       </div>
@@ -30,7 +30,7 @@
   <!-- /Breadcrumb -->
 
   <!-- Page Content -->
-  <div class="content" id="professional">
+  <div class="content" id="doctor">
     <div class="container">
 
       <!-- Doctor Widget -->
@@ -39,16 +39,16 @@
           <div class="doctor-widget">
             <div class="doc-info-left">
               <div class="doctor-img">
-                  <img src="{% if professional.user.photo_url %}{{ professional.user.photo_url }}{% else %}{% static 'app/img/avatars/anon.png' %}{% endif %}"
-                       class="img-fluid" alt="{{ professional.user.full_name }}"
+                  <img src="{% if doctor.user.photo_url %}{{ doctor.user.photo_url }}{% else %}{% static 'app/img/avatars/anon.png' %}{% endif %}"
+                       class="img-fluid" alt="{{ doctor.user.full_name }}"
                        width="300" height="300" />
               </div>
               <div class="doc-info-cont">
-                <h4 class="doc-name">{{ professional.user.full_name }}</h4>
-                <p class="doc-speciality">{{ professional.title }}</p>
+                <h4 class="doc-name">{{ doctor.user.full_name }}</h4>
+                <p class="doc-speciality">{{ doctor.title }}</p>
                 <p class="doc-department">
                   <img src="{% static 'app/img/specialities/specialities-05.png' %}" class="img-fluid" alt="Speciality">
-                  {{ professional.specialty }}
+                  {{ doctor.specialty }}
                 </p>
                 <div class="rating">
                   <i class="fas fa-star filled"></i>
@@ -72,8 +72,8 @@
                   <li><i class="far fa-comment"></i> 0 Feedback</li>
                   <li>
                     <i class="fas fa-map-marker-alt"></i>
-                    {% if professional.user.agenda %}
-                      {{ professional.user.agenda.fee }} MXN / {{ professional.user.agenda.duration }}min
+                    {% if doctor.user.agenda %}
+                      {{ doctor.user.agenda.fee }} MXN / {{ doctor.user.agenda.duration }}min
                     {% else %}
                       {% trans 'Unavailable' %}
                     {% endif %}
@@ -179,11 +179,34 @@
               </div>
               {% endverbatim %}
               <!-- /Time Slot -->
-
             </div>
           </div>
         </div>
         <!-- /Schedule Content -->
+        <div ref="successModal" class="modal fade custom-modal">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">{% trans 'Appointment Booked!' %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="card-body">
+                  <div class="success-cont">
+                    <i class="fas fa-check"></i>
+                    <h3>{% trans 'Appointment booked Successfully!' %}</h3>
+                    <p>Appointment booked with <strong>Dr. Darren Elder</strong><br> on <strong>12 Nov 2019 5:00PM to 6:00PM</strong></p>
+                    <a href="/" class="btn btn-primary view-inv-btn" @click.prevent="handleGoProfile">
+                      {% trans 'Ok, Go to my Profile' %}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
       <!-- /Schedule Widget -->
@@ -197,17 +220,17 @@
       <!-- /Submit Section -->
     </div>
   </div>
+
   <!-- /Page Content -->
   {% include "partials/footer.html" %}
 {% endblock %}
 
 {% block extra_scripts %}
   <script>
-    var PROFESSIONAL_UUID = '{{ professional.uuid }}';
+    var DOCTOR_UUID = '{{ doctor.uuid }}';
     var CURRENT_YEAR = parseInt('{{ year }}');
     var CURRENT_WEEK = parseInt('{{ week_number }}');
     var WEEK = JSON.parse('{{ week_json|safe }}');
-    console.log(WEEK);
   </script>
-  <script src="{% static 'app/components/professional.js' %}"></script>
+  <script src="{% static 'app/components/doctor.js' %}"></script>
 {% endblock %}

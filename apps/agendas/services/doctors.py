@@ -6,7 +6,6 @@ from datetime import timedelta, datetime, date
 from django.utils import timezone
 
 from apps.agendas.models import Appointment
-from apps.contrib.api.exceptions import SimpleValidationError
 
 
 class DoctorService(object):
@@ -26,6 +25,12 @@ class DoctorService(object):
                 'day':  day.strftime('%a'),
             })
         return days
+
+    @classmethod
+    def get_week_number(cls, date_instance, time_instance):
+        calculated_datetime = datetime.combine(date_instance, time_instance)
+        year, week_number, day = calculated_datetime.isocalendar()
+        return week_number
 
     @classmethod
     def get_week(cls, year=None, week=None):
@@ -56,7 +61,7 @@ class DoctorService(object):
         return reservations
 
     @classmethod
-    def calendar(cls, doctor, year=None, week=None):
+    def week_calendar(cls, doctor, year=None, week=None):
 
         week_days = cls.week_days(**cls.get_week(year, week))
         start_time = doctor.start_time
