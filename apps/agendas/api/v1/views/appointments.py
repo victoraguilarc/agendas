@@ -24,6 +24,10 @@ class AppointmentsViewSet(ViewSet):
             time=serializer.validated_data['time'],
             site=serializer.validated_data['site'],
         )
+
+        # Send email, it could be async
+        AppointmentService.send_reminder(appointment)
+
         week = DoctorProfileService.get_week_number(
             serializer.validated_data['date'],
             serializer.validated_data['time'],

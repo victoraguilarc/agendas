@@ -1,0 +1,33 @@
+{% load i18n %}
+
+{% blocktrans %}
+Your Appointment
+
+
+Appointment booked with! Dr. {{ doctor }}
+on {{ date }} at {{ time }}
+
+Check your appointments in the following link.
+
+
+     {{action_url}}
+
+
+If you did not request this simply ignore this email or
+report it to {{project_support_email}}
+
+---
+The team {{project_name}}
+{% endblocktrans %}
+
+
+
+
+
+
+
+
+
+
+
+
