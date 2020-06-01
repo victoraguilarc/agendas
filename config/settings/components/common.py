@@ -50,7 +50,7 @@ THIRD_PARTY_APPS: Tuple[str, ...] = (
 
     # Assets
     'imagekit',
-    'compressor',
+    # 'compressor',
     'import_export',
     'admin_sso',
 
@@ -165,7 +165,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 
     # Compressor
-    'compressor.finders.CompressorFinder',
+    # 'compressor.finders.CompressorFinder',
 )
 
 # MEDIA CONFIGURATION
