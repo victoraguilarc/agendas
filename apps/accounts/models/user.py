@@ -82,7 +82,7 @@ class User(AbstractUser):
     lang = models.CharField(
         verbose_name=_('Language'),
         choices=settings.LANGUAGES,
-        max_length=6,
+        max_length=10,
         default='en',
     )
 

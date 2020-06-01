@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/
 
 
 from config.settings.components import env
-from config.settings.components.common import TEMPLATES, INSTALLED_APPS
+from config.settings.components.common import TEMPLATES
 
 DEBUG = False
 
