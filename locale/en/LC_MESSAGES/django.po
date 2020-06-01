@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 18:53+0000\n"
+"POT-Creation-Date: 2020-06-01 15:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,25 +52,25 @@ msgstr ""
 msgid "Put your password again"
 msgstr ""
 
-#: apps/accounts/models/choices.py:18
+#: apps/accounts/models/choices.py:19
 msgid "Android"
 msgstr ""
 
-#: apps/accounts/models/choices.py:19
+#: apps/accounts/models/choices.py:20
 msgid "iOS"
 msgstr ""
 
-#: apps/accounts/models/choices.py:20
+#: apps/accounts/models/choices.py:21
 msgid "Web"
 msgstr ""
 
-#: apps/accounts/models/choices.py:33
+#: apps/accounts/models/choices.py:34
 #: web/templates/transactions/emails/confirm_email/message.html:13
 #: web/templates/transactions/views/email_confirm.html:16
 msgid "Confirm e-mail"
 msgstr ""
 
-#: apps/accounts/models/choices.py:34
+#: apps/accounts/models/choices.py:35
 #: web/templates/transactions/emails/reset_password/message.html:5
 #: web/templates/transactions/emails/reset_password/message.html:10
 #: web/templates/transactions/emails/reset_password/subject.txt:1
@@ -80,16 +80,26 @@ msgstr ""
 msgid "Reset Password"
 msgstr ""
 
-#: apps/accounts/models/pending_action.py:20 apps/accounts/models/user.py:111
+#: apps/accounts/models/choices.py:48
+msgid "PEDIATRICIAN"
+msgstr ""
+
+#: apps/accounts/models/choices.py:49
+msgid "GENERAL DOCTOR"
+msgstr ""
+
+#: apps/accounts/models/pending_action.py:20 apps/accounts/models/user.py:118
 #: apps/accounts/tests/unit/models/test_user.py:38
 msgid "User"
 msgstr ""
 
 #: apps/accounts/models/pending_action.py:42
+#: apps/agendas/models/appointment.py:54
 msgid "extra"
 msgstr ""
 
 #: apps/accounts/models/pending_action.py:43
+#: apps/agendas/models/appointment.py:55
 msgid "This field changes according to the type of action"
 msgstr ""
 
@@ -103,23 +113,23 @@ msgstr ""
 msgid "Pending Actions"
 msgstr ""
 
-#: apps/accounts/models/phone_device.py:16
+#: apps/accounts/models/phone_device.py:17
 msgid "Device ID"
 msgstr ""
 
-#: apps/accounts/models/phone_device.py:29
+#: apps/accounts/models/phone_device.py:30
 msgid "Model Name"
 msgstr ""
 
-#: apps/accounts/models/phone_device.py:35
+#: apps/accounts/models/phone_device.py:36
 msgid "Is active"
 msgstr ""
 
-#: apps/accounts/models/phone_device.py:57
+#: apps/accounts/models/phone_device.py:58
 msgid "Phone Device"
 msgstr ""
 
-#: apps/accounts/models/phone_device.py:58
+#: apps/accounts/models/phone_device.py:59
 msgid "Phone Devices"
 msgstr ""
 
@@ -162,24 +172,28 @@ msgid "Photo"
 msgstr ""
 
 #: apps/accounts/models/user.py:76
+msgid "Phone"
+msgstr ""
+
+#: apps/accounts/models/user.py:83
 msgid "Language"
 msgstr ""
 
-#: apps/accounts/models/user.py:112
+#: apps/accounts/models/user.py:119
 #: apps/accounts/tests/unit/models/test_user.py:42
 msgid "Users"
 msgstr ""
 
 #: apps/accounts/response_codes.py:13
-msgid "The google token is corrupted or expired"
+msgid "The token is corrupted or expired"
 msgstr ""
 
 #: apps/accounts/response_codes.py:18
-msgid "The google token was issued for an invalid provider"
+msgid "The token was issued for an invalid provider"
 msgstr ""
 
 #: apps/accounts/response_codes.py:23
-msgid "The facebook access token is corrupted or expired"
+msgid "The access token is corrupted or expired"
 msgstr ""
 
 #: apps/accounts/response_codes.py:28
@@ -187,7 +201,7 @@ msgid "Invalid Refresh token"
 msgstr ""
 
 #: apps/accounts/response_codes.py:33
-msgid "This account is not authorized"
+msgid "This account is unauthorized"
 msgstr ""
 
 #: apps/accounts/response_codes.py:38
@@ -289,6 +303,139 @@ msgstr ""
 msgid "This field is required."
 msgstr ""
 
+#: apps/agendas/models/appointment.py:16
+#: apps/agendas/models/doctor_profile.py:69
+#: apps/agendas/tests/unit/models/test_doctor_profile.py:21
+msgid "Doctor"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:21
+msgid "Visitor"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:24
+msgid "Status"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:30
+msgid "Site"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:36
+msgid "Date"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:39
+msgid "Time"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:43
+msgid "Duration"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:47
+msgid "Note"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:65
+#: apps/agendas/tests/unit/models/test_appointment.py:21
+msgid "Appointment"
+msgstr ""
+
+#: apps/agendas/models/appointment.py:66
+#: apps/agendas/tests/unit/models/test_appointment.py:25
+#: web/templates/partials/header.html:31
+msgid "Appointments"
+msgstr ""
+
+#: apps/agendas/models/choices.py:17
+msgid "REQUESTED"
+msgstr ""
+
+#: apps/agendas/models/choices.py:18
+msgid "ACCEPTED"
+msgstr ""
+
+#: apps/agendas/models/choices.py:19
+msgid "CANCELLED"
+msgstr ""
+
+#: apps/agendas/models/choices.py:20
+msgid "DENIED"
+msgstr ""
+
+#: apps/agendas/models/choices.py:31
+msgid "IN_PLACE"
+msgstr ""
+
+#: apps/agendas/models/choices.py:32
+msgid "ONLINE"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:24
+msgid "Title"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:28
+msgid "Locatión"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:34
+msgid "Is verified?"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:39 web/templates/home.html:4
+#: web/templates/home.html:22
+msgid "Start"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:43
+msgid "End"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:47
+msgid "Fee"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:50
+msgid ""
+"This price is for the a session with [x] duration in minutes, duration is "
+"configured below"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:54
+msgid "Consultation Duration"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:55
+msgid "This time is in minutes"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:59
+msgid "Auto Confirmation?"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:60
+msgid "If it's false the doctor must be accept or denied appointments manually"
+msgstr ""
+
+#: apps/agendas/models/doctor_profile.py:70
+#: apps/agendas/tests/unit/models/test_doctor_profile.py:25
+msgid "Doctors"
+msgstr ""
+
+#: apps/agendas/response_codes.py:7
+msgid "Doctor not Found"
+msgstr ""
+
+#: apps/agendas/response_codes.py:12
+msgid "Appointment not Found"
+msgstr ""
+
+#: apps/agendas/response_codes.py:17
+msgid "This date and time was reserved"
+msgstr ""
+
 #: apps/contrib/api/exceptions.py:42
 msgid "Server error"
 msgstr ""
@@ -341,11 +488,11 @@ msgstr ""
 msgid "SNS endpoint subscribe confirmed."
 msgstr ""
 
-#: config/settings/components/common.py:127
+#: config/settings/components/common.py:104
 msgid "Spanish"
 msgstr ""
 
-#: config/settings/components/common.py:128
+#: config/settings/components/common.py:105
 msgid "English"
 msgstr ""
 
@@ -353,11 +500,43 @@ msgstr ""
 msgid "Login with Google"
 msgstr ""
 
-#: web/templates/home.html:4 web/templates/home.html:22
-msgid "Start"
+#: web/templates/doctor.html:4 web/templates/doctor.html:19
+#: web/templates/doctor.html:24 web/templates/login.html:4
+#: web/templates/login.html:19 web/templates/login.html:24
+msgid "Doctor Profile"
 msgstr ""
 
-#: web/templates/home.html:26
+#: web/templates/doctor.html:16 web/templates/login.html:16
+msgid "Home"
+msgstr ""
+
+#: web/templates/doctor.html:82 web/templates/login.html:78
+#: web/templates/profile.html:88
+msgid "Unavailable"
+msgstr ""
+
+#: web/templates/doctor.html:189 web/templates/login.html:190
+#: web/templates/transactions/emails/appointment/subject.txt:1
+msgid "Appointment Booked!"
+msgstr ""
+
+#: web/templates/doctor.html:198 web/templates/login.html:199
+msgid "Appointment booked Successfully!"
+msgstr ""
+
+#: web/templates/doctor.html:199 web/templates/login.html:200
+msgid "Appointment booked with!"
+msgstr ""
+
+#: web/templates/doctor.html:201 web/templates/login.html:202
+msgid "Ok, Go to my Profile"
+msgstr ""
+
+#: web/templates/doctor.html:216 web/templates/login.html:217
+msgid "Book Appointment"
+msgstr ""
+
+#: web/templates/home.html:26 web/templates/partials/header.html:45
 msgid "Contact"
 msgstr ""
 
@@ -381,18 +560,115 @@ msgstr ""
 msgid "All rights reserved"
 msgstr ""
 
-#: web/templates/layouts/errors/400.html:24
+#: web/templates/layouts/errors/400.html:4
+msgid "Bad Request"
+msgstr ""
+
+#: web/templates/layouts/errors/400.html:5
+msgid "Bad Request!"
+msgstr ""
+
+#: web/templates/layouts/errors/400.html:10
+msgid ""
+"\n"
+"        This confirmation link <b>has expired or has already been used.</b> "
+"Please try another link.\n"
+"        "
+msgstr ""
+
+#: web/templates/layouts/errors/403.html:4
+msgid "Access Denied"
+msgstr ""
+
+#: web/templates/layouts/errors/403.html:5
+msgid "Access Denied!"
+msgstr ""
+
+#: web/templates/layouts/errors/403.html:10
+msgid ""
+"\n"
+"          You don't have enogh permissions to get this page, please, contact "
+"us at\n"
+"           <a  class=\"text-secondary\" href=\"mailto:support@xiberty.com"
+"\"><b>support@xiberty.com</b>.</a>\n"
+"        "
+msgstr ""
+
+#: web/templates/layouts/errors/404.html:4
+msgid "Not Found"
+msgstr ""
+
+#: web/templates/layouts/errors/404.html:5
+msgid "Not Found!"
+msgstr ""
+
+#: web/templates/layouts/errors/404.html:10
+msgid ""
+"\n"
+"          Page not found, this resource don't exist or its under "
+"construction.\n"
+"        "
+msgstr ""
+
+#: web/templates/layouts/errors/500.html:4
+msgid "Server Error"
+msgstr ""
+
+#: web/templates/layouts/errors/500.html:5
+msgid "Intternal Server Error!"
+msgstr ""
+
+#: web/templates/layouts/errors/500.html:10
+msgid ""
+"\n"
+"          It's occurred an error in the server, please contact us to get "
+"more information at\n"
+"          <a  class=\"text-secondary\" href=\"mailto:support@xiberty.com"
+"\"><b>support@xiberty.com</b>.</a>\n"
+"        "
+msgstr ""
+
+#: web/templates/layouts/errors/base.html:24
+msgid "Back to Home"
+msgstr ""
+
+#: web/templates/layouts/partials/footer.html:14
+msgid "Terms of use"
+msgstr ""
+
+#: web/templates/partials/doctor_cards.html:8
+msgid "Book Our Doctor"
+msgstr ""
+
+#: web/templates/partials/doctor_cards.html:9
+msgid "whenever you want"
+msgstr ""
+
+#: web/templates/partials/doctor_cards.html:52
+msgid "Not Available"
+msgstr ""
+
+#: web/templates/partials/doctor_cards.html:54
+msgid "Price by Session"
+msgstr ""
+
+#: web/templates/partials/doctor_cards.html:60
+msgid "Book Now"
+msgstr ""
+
+#: web/templates/profile.html:4
+msgid "Professional Profile"
+msgstr ""
+
 #: web/templates/transactions/confirm_email.html:5
 #: web/templates/transactions/emails/confirm_email/message.html:5
 msgid "Email Confirmation"
 msgstr ""
 
-#: web/templates/layouts/errors/400.html:28
 #: web/templates/transactions/confirm_email.html:9
 msgid "Successful confirmation!"
 msgstr ""
 
-#: web/templates/layouts/errors/400.html:33
 #: web/templates/transactions/confirm_email.html:14
 msgid ""
 "\n"
@@ -401,39 +677,64 @@ msgid ""
 "        "
 msgstr ""
 
-#: web/templates/layouts/errors/403.html:3
-msgid "Access Denied"
+#: web/templates/transactions/emails/appointment/message.html:5
+#: web/templates/transactions/emails/appointment/message.html:10
+msgid "Your Appointment"
 msgstr ""
 
-#: web/templates/layouts/errors/403.html:11
-msgid "ACCESS DENIED"
+#: web/templates/transactions/emails/appointment/message.html:14
+#, python-format
+msgid ""
+"\n"
+"            Appointment booked with!<br>\n"
+"            <b>Dr. %(doctor)s</b> on <b>%(date)s - %(time)s</b>\n"
+"\n"
+"            Check your appointments in the following link.\n"
+"        "
 msgstr ""
 
-#: web/templates/layouts/errors/403.html:19
-#: web/templates/layouts/errors/404.html:18
-#: web/templates/layouts/errors/500.html:18
-#: web/templates/transactions/views/email_confirm.html:50
-msgid "Back to Start"
+#: web/templates/transactions/emails/appointment/message.html:25
+msgid "NOTE"
 msgstr ""
 
-#: web/templates/layouts/errors/404.html:3
-msgid "Resource not found"
+#: web/templates/transactions/emails/appointment/message.html:31
+#: web/templates/transactions/emails/confirm_email/message.html:23
+#: web/templates/transactions/emails/reset_password/message.html:23
+msgid "If you did not request this simply ignore this email or"
 msgstr ""
 
-#: web/templates/layouts/errors/404.html:11
-msgid "RESOURCE NOT FOUND"
+#: web/templates/transactions/emails/appointment/message.html:33
+#: web/templates/transactions/emails/confirm_email/message.html:25
+#: web/templates/transactions/emails/reset_password/message.html:25
+msgid "report it"
 msgstr ""
 
-#: web/templates/layouts/errors/500.html:3
-msgid "Server Error"
+#: web/templates/transactions/emails/appointment/message.html:38
+msgid "CHECK MY APPOINTMENTS"
 msgstr ""
 
-#: web/templates/layouts/errors/500.html:11
-msgid "SERVER ERROR"
+#: web/templates/transactions/emails/appointment/message.txt:3
+#, python-format
+msgid ""
+"\n"
+"Your Appointment\n"
+"\n"
+"\n"
+"Appointment booked with! Dr. %(doctor)s\n"
+"on %(date)s at %(time)s\n"
+"\n"
+"Check your appointments in the following link.\n"
 msgstr ""
 
-#: web/templates/layouts/partials/footer.html:14
-msgid "Terms of use"
+#: web/templates/transactions/emails/appointment/message.txt:22
+#, python-format
+msgid ""
+"\n"
+"If you did not request this simply ignore this email or\n"
+"report it to %(project_support_email)s\n"
+"\n"
+"---\n"
+"The team %(project_name)s\n"
 msgstr ""
 
 #: web/templates/transactions/emails/confirm_email/message.html:11
@@ -442,16 +743,6 @@ msgstr ""
 
 #: web/templates/transactions/emails/confirm_email/message.html:18
 msgid "Click on the following button and confirm your email to start enjoying"
-msgstr ""
-
-#: web/templates/transactions/emails/confirm_email/message.html:23
-#: web/templates/transactions/emails/reset_password/message.html:23
-msgid "If you did not request this simply ignore this email or"
-msgstr ""
-
-#: web/templates/transactions/emails/confirm_email/message.html:25
-#: web/templates/transactions/emails/reset_password/message.html:25
-msgid "report it"
 msgstr ""
 
 #: web/templates/transactions/emails/confirm_email/message.html:30
@@ -674,6 +965,10 @@ msgid ""
 "invalid.</b><br>\n"
 "                            Please try again with a valid link.\n"
 "                        "
+msgstr ""
+
+#: web/templates/transactions/views/email_confirm.html:50
+msgid "Back to Start"
 msgstr ""
 
 #: web/templates/transactions/views/email_verification_sent.html:21

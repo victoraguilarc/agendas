@@ -47,7 +47,7 @@ class DoctorProfile(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
         verbose_name=_('Fee'),
         decimal_places=2,
         max_digits=20,
-        help_text=_('This price is for the a session wirh [x] duration in minutes, duration is configured below'),
+        help_text=_('This price is for the a session with [x] duration in minutes, duration is configured below'),
     )
 
     consultation_duration = models.IntegerField(

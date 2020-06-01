@@ -36,6 +36,8 @@ First you need to have installed `git`, `docker`, `ssh`, `make` and and a good `
   * `make superuser` make a superuserfor develoment
   * `make isort` Fix posible import issues
   * `make test` Run the tests with pytest
+  * `make locales` Generate translation files
+  * `make compile_locales` Compile translation files
 
 ### Frontend development
 
