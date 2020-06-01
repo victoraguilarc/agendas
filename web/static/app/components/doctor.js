@@ -31,7 +31,7 @@ new Vue({
     handleNextWeek: function () {
       const self = this;
       const nextWeek = this.currentWeek + 1;
-      client.get(`/professionals/${this.doctor_uuid}/calendar/?week=${nextWeek}`)
+      client.get(`/doctors/${this.doctor_uuid}/calendar/?week=${nextWeek}`)
       .then(function (response) {
         self.week_days = response.data;
         self.currentWeek = nextWeek;
@@ -47,7 +47,7 @@ new Vue({
     handlePreviousWeek: function () {
       const self = this;
       const previousWeek = this.currentWeek - 1;
-      client.get(`/professionals/${this.doctor_uuid}/calendar/?week=${previousWeek}`)
+      client.get(`/doctors/${this.doctor_uuid}/calendar/?week=${previousWeek}`)
       .then(function (response) {
         self.week_days = response.data;
         self.currentWeek = previousWeek;
@@ -76,8 +76,7 @@ new Vue({
         self.selected = { date: null, time: null };
       })
       .catch(function (error) {
-        // handle error
-        console.log(error);
+        if (!!error.response.data.message)  toastr.error(error.response.data.message, 'Error!')
       })
       .then(function () {
         // always executed

@@ -226,11 +226,4 @@
 {% endblock %}
 
 {% block extra_scripts %}
-  <script>
-    var DOCTOR_UUID = '{{ doctor.uuid }}';
-    var CURRENT_YEAR = parseInt('{{ year }}');
-    var CURRENT_WEEK = parseInt('{{ week_number }}');
-    var WEEK = JSON.parse('{{ week_json|safe }}');
-  </script>
-  <script src="{% static 'app/components/doctor.js' %}"></script>
 {% endblock %}

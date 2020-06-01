@@ -35,7 +35,7 @@ class DoctorProfileAgendaView(DetailView):
 
 
 class DoctorProfileView(DetailView):
-    template_name = 'patient.html'
+    template_name = 'profile.html'
     model = DoctorProfile
 
     def get_context_data(self, **kwargs):

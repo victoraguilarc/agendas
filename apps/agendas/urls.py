@@ -2,7 +2,7 @@
 
 from django.urls import path
 from apps.agendas.views.doctors import DoctorsView, DoctorProfileAgendaView, DoctorProfileView
-from apps.agendas.views.visitors import VisitorProfileView
+from apps.agendas.views.visitors import UserProfileView
 
 app_name = 'agendas'
 urlpatterns = [
@@ -10,19 +10,19 @@ urlpatterns = [
     path(
         '',
         DoctorsView.as_view(),
-        name='professionals',
+        name='doctors',
     ),
 
     # >> Profiles
     path(
         'profile/',
-        VisitorProfileView.as_view(),
-        name='visitor-profile',
+        UserProfileView.as_view(),
+        name='profile',
     ),
 
     path(
         'doctor/<uuid:doctor_uuid>/',
         view=DoctorProfileAgendaView.as_view(),
-        name='doctor',
+        name='doctor-agenda',
     )
 ]

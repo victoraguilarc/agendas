@@ -10,13 +10,13 @@
           <span></span>
         </span>
       </a>
-      <a href="index.html" class="navbar-brand logo">
+      <a href="{% url 'agendas:doctors' %}" class="navbar-brand logo">
         <img src="{% static 'app/logos/doctores-color.png' %}" class="img-fluid" alt="Logo">
       </a>
     </div>
     <div class="main-menu-wrapper">
       <div class="menu-header">
-        <a href="index.html" class="menu-logo">
+        <a href="{% url 'agendas:doctors' %}" class="menu-logo">
           <img src="{% static 'app/logos/doctores-color.png' %}" class="img-fluid" alt="Logo">
         </a>
         <a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -25,10 +25,10 @@
       </div>
       <ul class="main-nav">
         <li class="active">
-          <a href="index.html">Agendar</a>
+          <a href="{% url 'agendas:doctors' %}">Agendar</a>
         </li>
         <li>
-          <a href="index.html">Reservas</a>
+          <a href="{% url 'agendas:profile' %}">{% trans 'Appointments' %}</a>
         </li>
 
         <li class="login-link">
