@@ -76,5 +76,5 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        script: cd /srv/agendas && ./start.sh
+        key: ${{ secrets.KEY }}
+        script: /srv/agendas/start.sh
