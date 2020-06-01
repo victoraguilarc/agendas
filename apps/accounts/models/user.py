@@ -65,7 +65,7 @@ class User(AbstractUser):
     photo = ProcessedImageField(
         verbose_name=_('Photo'),
         upload_to='profiles/%Y/%m/%d',
-        processors=[ResizeToFill(350, 350)],
+        processors=[ResizeToFill(460, 300)],
         format='PNG',
         options={'quality': 80},
         blank=True,

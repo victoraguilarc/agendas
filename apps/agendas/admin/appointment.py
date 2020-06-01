@@ -32,23 +32,23 @@ class AppointmentAdmin(admin.ModelAdmin):
         ]
         return custom_urls + urls
 
-    def process_reminder(self, request, account_id, *args, **kwargs):
+    def process_reminder(self, request, appointment_uuid, *args, **kwargs):
         return self.process_action(
             request=request,
-            account_id=account_id,
+            appointment_uuid=appointment_uuid,
             action_form=AppointmentReminderForm,
-            action_title='Deposit',
+            action_title='Reminder',
         )
 
-    def process_action(self, request, account_id, action_form, action_title):
-        account = self.get_object(request, account_id)
+    def process_action(self, request, appointment_uuid, action_form, action_title):
+        appointment = self.get_object(request, appointment_uuid)
         if request.method != 'POST':
             form = action_form()
         else:
             form = action_form(request.POST)
             if form.is_valid():
                 try:
-                    form.save(account, request.user)
+                    form.save(appointment, request.user)
                 except Exception as e:
                     # If save() raised, the form will a have a non
                     # field error containing an informative message.
@@ -56,8 +56,8 @@ class AppointmentAdmin(admin.ModelAdmin):
                 else:
                     self.message_user(request, 'Success')
                     url = reverse(
-                        'admin:account_account_change',
-                        args=[account.pk],
+                        'admin:agendas_appointment_change',
+                        args=[str(appointment.uuid)],
                         current_app=self.admin_site.name,
                     )
                     return HttpResponseRedirect(url)
@@ -65,7 +65,7 @@ class AppointmentAdmin(admin.ModelAdmin):
         context = self.admin_site.each_context(request)
         context['opts'] = self.model._meta
         context['form'] = form
-        context['account'] = account
+        context['appoinment'] = appointment
         context['title'] = action_title
         return TemplateResponse(
             request,
