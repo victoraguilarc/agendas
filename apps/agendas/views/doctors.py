@@ -3,8 +3,8 @@ import json
 from django.views.generic import TemplateView, DetailView
 
 from apps.agendas.models import DoctorProfile
-from apps.agendas.selectors.doctors import DoctorSelector
-from apps.agendas.services.doctors import DoctorService
+from apps.agendas.selectors.doctor_profile import DoctorProfileSelector
+from apps.agendas.services.doctor_profile import DoctorProfileService
 
 
 class DoctorsView(TemplateView):
@@ -12,7 +12,7 @@ class DoctorsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context['doctors'] = DoctorSelector.get_enabled_doctors()
+        context['doctors'] = DoctorProfileSelector.get_enabled_doctors()
         return context
 
 
@@ -26,9 +26,9 @@ class DoctorProfileAgendaView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context['week'] = DoctorService.week_calendar(context['doctor'])
+        context['week'] = DoctorProfileService.week_calendar(context['doctor'])
         context['week_json'] = json.dumps(context['week'])
-        week = DoctorService.get_week()
+        week = DoctorProfileService.get_week()
         context['week_number'] = week['week_number']
         context['year'] = week['year']
         return context

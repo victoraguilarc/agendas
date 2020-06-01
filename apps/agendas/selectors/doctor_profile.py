@@ -5,7 +5,7 @@ from apps.agendas.models import DoctorProfile
 from apps.agendas.response_codes import DOCTOR_NOT_FOUND
 
 
-class DoctorSelector(object):
+class DoctorProfileSelector(object):
 
     @classmethod
     def get_enabled_doctors(cls):

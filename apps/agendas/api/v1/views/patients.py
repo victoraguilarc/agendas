@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from apps.agendas.api.v1.serializers.appointments import AppointmentSerializer
-from apps.agendas.selectors.appointments import AppointmentSelector
+from apps.agendas.selectors.appointment import AppointmentSelector
 from apps.contrib.api.viewsets import PermissionViewSet
 
 

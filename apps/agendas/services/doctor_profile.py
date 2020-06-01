@@ -8,7 +8,7 @@ from django.utils import timezone
 from apps.agendas.models import Appointment
 
 
-class DoctorService(object):
+class DoctorProfileService(object):
 
     @classmethod
     def week_days(cls, year, week_number):

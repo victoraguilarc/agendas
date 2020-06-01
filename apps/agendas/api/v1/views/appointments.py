@@ -4,10 +4,10 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 
 from apps.agendas.api.v1.serializers.appointments import CreateAppointmentSerializer, AppointmentSerializer
-from apps.agendas.selectors.appointments import AppointmentSelector
-from apps.agendas.selectors.doctors import DoctorSelector
-from apps.agendas.services.appointments import AppointmentService
-from apps.agendas.services.doctors import DoctorService
+from apps.agendas.selectors.appointment import AppointmentSelector
+from apps.agendas.selectors.doctor_profile import DoctorProfileSelector
+from apps.agendas.services.appointment import AppointmentService
+from apps.agendas.services.doctor_profile import DoctorProfileService
 
 
 class AppointmentsViewSet(ViewSet):
@@ -24,12 +24,12 @@ class AppointmentsViewSet(ViewSet):
             time=serializer.validated_data['time'],
             site=serializer.validated_data['site'],
         )
-        week = DoctorService.get_week_number(
+        week = DoctorProfileService.get_week_number(
             serializer.validated_data['date'],
             serializer.validated_data['time'],
         )
-        doctor = DoctorSelector.get_by_uuid(serializer.validated_data['doctor_uuid'])
-        week_days = DoctorService.week_calendar(doctor, week=week)
+        doctor = DoctorProfileSelector.get_by_uuid(serializer.validated_data['doctor_uuid'])
+        week_days = DoctorProfileService.week_calendar(doctor, week=week)
         return Response({
             'appointment': AppointmentSerializer(appointment).data,
             'week_days': week_days

@@ -3,7 +3,7 @@ import json
 from braces.views import LoginRequiredMixin
 from django.views.generic import TemplateView
 
-from apps.agendas.selectors.appointments import AppointmentSelector
+from apps.agendas.selectors.appointment import AppointmentSelector
 
 
 class UserProfileView(LoginRequiredMixin, TemplateView):
