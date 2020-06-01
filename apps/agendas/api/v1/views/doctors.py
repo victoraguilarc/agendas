@@ -31,7 +31,7 @@ class DoctorsViewSet(PermissionViewSet):
         """It shows the appointments to the professionals."""
 
         doctor = DoctorProfileSelector.get_by_uuid(doctor_uuid)
-        appointments = AppointmentSelector.professional_appointments(doctor)
+        appointments = AppointmentSelector.doctor_appointments(doctor)
         return Response(AppointmentSerializer(appointments, many=True).data)
 
     def calendar(self, request, doctor_uuid, **kwargs):
