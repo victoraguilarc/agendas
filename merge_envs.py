@@ -4,7 +4,7 @@ import os
 from typing import Sequence
 
 ROOT_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
-PRODUCTION_DOTENVS_DIR_PATH = os.path.join(ROOT_DIR_PATH, '.envs', 'stage')
+PRODUCTION_DOTENVS_DIR_PATH = os.path.join(ROOT_DIR_PATH, '.envs', 'prod')
 production_env_file_paths = [
     os.path.join(PRODUCTION_DOTENVS_DIR_PATH, 'django'),
     os.path.join(PRODUCTION_DOTENVS_DIR_PATH, 'postgres'),

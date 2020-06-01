@@ -64,34 +64,6 @@ SECURE_SSL_REDIRECT = False
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 
-#
-#  STORAGE CONFIGURATION
-# ------------------------------------------------------------------------------
-
-INSTALLED_APPS += ('django_s3_storage', )  # noqa F405
-
-# Boto3 can use an IAM role if the application is running on AWS
-# https://boto3.amazonaws.com/v1/documentation/api/latest/guide/iam-example-policies.html
-# This eliminates the need to use keys
-# AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
-
-# https://github.com/etianen/django-s3-storage
-AWS_S3_BUCKET_NAME = env('AWS_S3_BUCKET_NAME')
-AWS_S3_BUCKET_NAME_STATIC = AWS_S3_BUCKET_NAME
-
-AWS_CACHE_EXPIRATION = 60 * 60 * 24  # 1 hours.
-AWS_S3_MAX_AGE_SECONDS_CACHED_STATIC = AWS_CACHE_EXPIRATION
-AWS_S3_BUCKET_AUTH = False
-AWS_S3_MAX_AGE_SECONDS = AWS_CACHE_EXPIRATION
-AWS_S3_GZIP = True
-AWS_REGION = env('AWS_S3_REGION_NAME', default=None)
-AWS_LOCATION = ''
-
-DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
-STATICFILES_STORAGE = 'django_s3_storage.storage.StaticS3Storage'
-
-AWS_S3_CUSTOM_DOMAIN = '{0}.s3.amazonaws.com'.format(AWS_S3_BUCKET_NAME)
-STATIC_URL = 'https://{0}/static/'.format(AWS_S3_CUSTOM_DOMAIN)
-MEDIA_URL = 'https://{0}/media/'.format(AWS_S3_CUSTOM_DOMAIN)
+# DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
+# STATICFILES_STORAGE = 'django_s3_storage.storage.StaticS3Storage'
 
