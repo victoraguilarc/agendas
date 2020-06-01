@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 15:44+0000\n"
+"POT-Creation-Date: 2020-06-01 18:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/accounts/admin/user.py:26
+#: apps/accounts/admin/user.py:26 web/templates/account/login.html:35
+#: web/templates/account/password_reset.html:28
+#: web/templates/account/password_reset.html:32
+#: web/templates/account/signup.html:48 web/templates/account/signup.html:50
 msgid "Email"
 msgstr "Correo Electrónico"
 
@@ -71,6 +74,8 @@ msgid "Confirm e-mail"
 msgstr "Confirmar Email"
 
 #: apps/accounts/models/choices.py:35
+#: web/templates/account/password_reset.html:4
+#: web/templates/account/password_reset.html:49
 #: web/templates/transactions/emails/reset_password/message.html:5
 #: web/templates/transactions/emails/reset_password/message.html:10
 #: web/templates/transactions/emails/reset_password/subject.txt:1
@@ -354,7 +359,6 @@ msgstr "Cita"
 
 #: apps/agendas/models/appointment.py:66
 #: apps/agendas/tests/unit/models/test_appointment.py:25
-#: web/templates/partials/header.html:31
 msgid "Appointments"
 msgstr "Citas"
 
@@ -477,13 +481,91 @@ msgstr "La Subscripción al SNS falló"
 msgid "SNS endpoint subscribe confirmed."
 msgstr "Suscripción SNS confirmada"
 
-#: config/settings/components/common.py:104
+#: config/settings/components/common.py:105
 msgid "Spanish"
 msgstr "Español"
 
-#: config/settings/components/common.py:105
+#: config/settings/components/common.py:106
 msgid "English"
 msgstr "Ingles"
+
+#: web/templates/account/login.html:5 web/templates/account/login.html:18
+msgid "Login"
+msgstr ""
+
+#: web/templates/account/login.html:33
+msgid "Usuario  o Correo Electrónico"
+msgstr ""
+
+#: web/templates/account/login.html:46 web/templates/account/login.html:48
+#: web/templates/account/signup.html:62 web/templates/account/signup.html:64
+#: web/templates/transactions/views/password_reset_confirm.html:51
+msgid "Password"
+msgstr "Contraseña"
+
+#: web/templates/account/login.html:59
+#, fuzzy
+#| msgid "Confirm Password"
+msgid "Forgot Password ?"
+msgstr "Confirmar Contraseña"
+
+#: web/templates/account/login.html:81 web/templates/account/signup.html:111
+#, fuzzy
+#| msgid "Create an account"
+msgid "Don’t have an account?"
+msgstr "Crear mi cuenta"
+
+#: web/templates/account/login.html:83 web/templates/account/signup.html:91
+#: web/templates/account/signup.html:113
+#, fuzzy
+#| msgid "Registered Device."
+msgid "Register"
+msgstr "Dispositivo Registrado"
+
+#: web/templates/account/logout.html:5 web/templates/account/logout.html:19
+#: web/templates/profile.html:46
+msgid "Logout"
+msgstr ""
+
+#: web/templates/account/logout.html:21
+msgid "Are you sure?"
+msgstr ""
+
+#: web/templates/account/logout.html:36
+msgid "My account"
+msgstr ""
+
+#: web/templates/account/logout.html:39
+msgid "Yes, I am sure"
+msgstr ""
+
+#: web/templates/account/password_reset.html:17
+#, fuzzy
+#| msgid "Confirm Password"
+msgid "Forgot Password?"
+msgstr "Confirmar Contraseña"
+
+#: web/templates/account/password_reset.html:19
+#, fuzzy
+#| msgid "An email to restore password was sent"
+msgid "Enter your email to get a password reset link"
+msgstr "Se te envió un Correo para restaurar contraseña"
+
+#: web/templates/account/signup.html:4 web/templates/account/signup.html:17
+msgid "SignUp"
+msgstr ""
+
+#: web/templates/account/signup.html:33 web/templates/account/signup.html:35
+#, fuzzy
+#| msgid "username"
+msgid "Username"
+msgstr "Nombre de Usuario"
+
+#: web/templates/account/signup.html:77 web/templates/account/signup.html:79
+#: web/templates/transactions/reset_password.html:85
+#: web/templates/transactions/views/password_reset_confirm.html:65
+msgid "Confirm Password"
+msgstr "Confirmar Contraseña"
 
 #: web/templates/admin_sso/login.html:43
 msgid "Login with Google"
@@ -513,19 +595,29 @@ msgstr "Cita Agendada!"
 msgid "Appointment booked Successfully!"
 msgstr "Cita Agendada exitosamente!"
 
-#: web/templates/doctor.html:199 web/templates/login.html:200
+#: web/templates/doctor.html:200 web/templates/login.html:200
 msgid "Appointment booked with: "
 msgstr "Cita Agendada con: "
 
-#: web/templates/doctor.html:201 web/templates/login.html:202
+#: web/templates/doctor.html:208 web/templates/login.html:202
 msgid "Ok, Go to my Profile"
 msgstr "OK, Ir a mi Perfil"
 
-#: web/templates/doctor.html:216 web/templates/login.html:217
+#: web/templates/doctor.html:223 web/templates/login.html:217
 msgid "Book Appointment"
 msgstr "Agendar Cita"
 
-#: web/templates/home.html:26 web/templates/partials/header.html:45
+#: web/templates/doctors.html:11
+#, fuzzy
+#| msgid "Book Appointment"
+msgid "Search Doctor, Make an Appointment"
+msgstr "Agendar Cita"
+
+#: web/templates/doctors.html:12
+msgid "Discover the best doctors, clinic & hospital the city nearest to you."
+msgstr ""
+
+#: web/templates/home.html:26 web/templates/partials/header.html:46
 msgid "Contact"
 msgstr "Contacto"
 
@@ -534,10 +626,16 @@ msgid "Development API"
 msgstr "API de Desarrollo"
 
 #: web/templates/home.html:37
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                    This project contains <i>Web services</i><br>\n"
+#| "                    for <u><i><b>medical</b></i></u> Appointments\n"
+#| "                "
 msgid ""
 "\n"
 "                    This project contains <i>Web services</i><br>\n"
-"                    for <u><i><b>medical</b></i></u> Appointments\n"
+"                    for <u><i><b>Operations</b></i></u> in Grow Mobility\n"
 "                "
 msgstr ""
 "\n"
@@ -591,8 +689,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"          No tienes suficientes permisos para ver esta página, por favor, contactanos "
-"\n"
+"          No tienes suficientes permisos para ver esta página, por favor, "
+"contactanos \n"
 "           <a  class=\"text-secondary\" href=\"mailto:support@xiberty.com"
 "\"><b>support@xiberty.com</b>.</a>\n"
 "        "
@@ -613,8 +711,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"          Página no encontrada, este recurso no existe o esta en construcción"
-"        "
+"          Página no encontrada, este recurso no existe o esta en "
+"construcción        "
 
 #: web/templates/layouts/errors/500.html:4
 msgid "Server Error"
@@ -634,8 +732,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"          Ocurrió un error en el servidor, por favor contactanos "
-"para más información a \n"
+"          Ocurrió un error en el servidor, por favor contactanos para más "
+"información a \n"
 "          <a  class=\"text-secondary\" href=\"mailto:support@xiberty.com"
 "\"><b>support@xiberty.com</b>.</a>\n"
 "        "
@@ -668,6 +766,20 @@ msgstr "Precio por Consulta"
 msgid "Book Now"
 msgstr "Agendar Ahora"
 
+#: web/templates/partials/header.html:28
+#, fuzzy
+#| msgid "Appointment"
+msgid "New Appointment"
+msgstr "Cita"
+
+#: web/templates/partials/header.html:33 web/templates/partials/header.html:52
+msgid "My Account"
+msgstr ""
+
+#: web/templates/partials/header.html:35 web/templates/partials/header.html:54
+msgid "Login / Signup"
+msgstr ""
+
 #: web/templates/profile.html:4
 msgid "Professional Profile"
 msgstr "Perfil Profesional"
@@ -699,15 +811,32 @@ msgid "Your Appointment"
 msgstr "Tu Cita Agendada"
 
 #: web/templates/transactions/emails/appointment/message.html:14
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Your Appointment\n"
+#| "\n"
+#| "\n"
+#| "Appointment booked with: Dr. %(doctor)s\n"
+#| "on %(date)s at %(time)s\n"
+#| "\n"
+#| "Check your appointments in the following link.\n"
 msgid ""
 "\n"
-"            Cita agendada con: <br>\n"
+"            Appointment booked with: <br>\n"
 "            <b>Dr. %(doctor)s</b> on <b>%(date)s - %(time)s</b>\n"
 "\n"
-"            Revisa tus citas en el siguiente enlace.\n"
+"            Check your appointments in the following link.\n"
 "        "
 msgstr ""
+"\n"
+"Tu Cida Agendada\n"
+"\n"
+"\n"
+"Cita Agendada con: Dr. %(doctor)s\n"
+"el %(date)s at %(time)s\n"
+"\n"
+"Revisa tus citas en el siguiente enlace.\n"
 
 #: web/templates/transactions/emails/appointment/message.html:25
 msgid "NOTE"
@@ -773,7 +902,8 @@ msgstr "Hola"
 
 #: web/templates/transactions/emails/confirm_email/message.html:18
 msgid "Click on the following button and confirm your email to start enjoying"
-msgstr "Click en el siguiente boton y confirmar tu correo para empezar a disfrutar"
+msgstr ""
+"Click en el siguiente boton y confirmar tu correo para empezar a disfrutar"
 
 #: web/templates/transactions/emails/confirm_email/message.html:30
 msgid "CONFIRM MY EMAIL"
@@ -810,8 +940,8 @@ msgstr ""
 "     %(action_url)s\n"
 "\n"
 "\n"
-"Si ti no ejecutaste esta peticion, simplemente ignora este correo o reportalo to "
-"%(project_support_email)s\n"
+"Si ti no ejecutaste esta peticion, simplemente ignora este correo o "
+"reportalo to %(project_support_email)s\n"
 "\n"
 "---\n"
 "The team %(project_name)s\n"
@@ -868,11 +998,6 @@ msgstr "Enlace Incorrecto"
 #: web/templates/transactions/reset_password.html:27
 msgid "Enter and confirm your new password."
 msgstr "Presionar Enter y confirmar un nueo"
-
-#: web/templates/transactions/reset_password.html:85
-#: web/templates/transactions/views/password_reset_confirm.html:65
-msgid "Confirm Password"
-msgstr "Confirmar Contraseña"
 
 #: web/templates/transactions/reset_password.html:105
 #: web/templates/transactions/views/password_reset_confirm.html:4
@@ -1047,15 +1172,11 @@ msgid ""
 "                        "
 msgstr ""
 "\n"
-"                            El enlace de restauración es <b> invalido </b> posiblemente "
-"porque alguien más ya lo ha usado.\n"
+"                            El enlace de restauración es <b> invalido </b> "
+"posiblemente porque alguien más ya lo ha usado.\n"
 "                            Por favor  try <a href=\"%(passwd_reset_url)s"
 "\"><b>Restore your password</b></a> again.\n"
 "                        "
-
-#: web/templates/transactions/views/password_reset_confirm.html:51
-msgid "Password"
-msgstr "Contraseña"
 
 #: web/templates/transactions/views/password_reset_done.html:4
 msgid "Password reset"

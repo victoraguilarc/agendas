@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 15:43+0000\n"
+"POT-Creation-Date: 2020-06-01 18:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/accounts/admin/user.py:26
+#: apps/accounts/admin/user.py:26 web/templates/account/login.html:35
+#: web/templates/account/password_reset.html:28
+#: web/templates/account/password_reset.html:32
+#: web/templates/account/signup.html:48 web/templates/account/signup.html:50
 msgid "Email"
 msgstr ""
 
@@ -71,6 +74,8 @@ msgid "Confirm e-mail"
 msgstr ""
 
 #: apps/accounts/models/choices.py:35
+#: web/templates/account/password_reset.html:4
+#: web/templates/account/password_reset.html:49
 #: web/templates/transactions/emails/reset_password/message.html:5
 #: web/templates/transactions/emails/reset_password/message.html:10
 #: web/templates/transactions/emails/reset_password/subject.txt:1
@@ -344,7 +349,6 @@ msgstr ""
 
 #: apps/agendas/models/appointment.py:66
 #: apps/agendas/tests/unit/models/test_appointment.py:25
-#: web/templates/partials/header.html:31
 msgid "Appointments"
 msgstr ""
 
@@ -464,12 +468,78 @@ msgstr ""
 msgid "SNS endpoint subscribe confirmed."
 msgstr ""
 
-#: config/settings/components/common.py:104
+#: config/settings/components/common.py:105
 msgid "Spanish"
 msgstr ""
 
-#: config/settings/components/common.py:105
+#: config/settings/components/common.py:106
 msgid "English"
+msgstr ""
+
+#: web/templates/account/login.html:5 web/templates/account/login.html:18
+msgid "Login"
+msgstr ""
+
+#: web/templates/account/login.html:33
+msgid "Usuario  o Correo Electrónico"
+msgstr ""
+
+#: web/templates/account/login.html:46 web/templates/account/login.html:48
+#: web/templates/account/signup.html:62 web/templates/account/signup.html:64
+#: web/templates/transactions/views/password_reset_confirm.html:51
+msgid "Password"
+msgstr ""
+
+#: web/templates/account/login.html:59
+msgid "Forgot Password ?"
+msgstr ""
+
+#: web/templates/account/login.html:81 web/templates/account/signup.html:111
+msgid "Don’t have an account?"
+msgstr ""
+
+#: web/templates/account/login.html:83 web/templates/account/signup.html:91
+#: web/templates/account/signup.html:113
+msgid "Register"
+msgstr ""
+
+#: web/templates/account/logout.html:5 web/templates/account/logout.html:19
+#: web/templates/profile.html:46
+msgid "Logout"
+msgstr ""
+
+#: web/templates/account/logout.html:21
+msgid "Are you sure?"
+msgstr ""
+
+#: web/templates/account/logout.html:36
+msgid "My account"
+msgstr ""
+
+#: web/templates/account/logout.html:39
+msgid "Yes, I am sure"
+msgstr ""
+
+#: web/templates/account/password_reset.html:17
+msgid "Forgot Password?"
+msgstr ""
+
+#: web/templates/account/password_reset.html:19
+msgid "Enter your email to get a password reset link"
+msgstr ""
+
+#: web/templates/account/signup.html:4 web/templates/account/signup.html:17
+msgid "SignUp"
+msgstr ""
+
+#: web/templates/account/signup.html:33 web/templates/account/signup.html:35
+msgid "Username"
+msgstr ""
+
+#: web/templates/account/signup.html:77 web/templates/account/signup.html:79
+#: web/templates/transactions/reset_password.html:85
+#: web/templates/transactions/views/password_reset_confirm.html:65
+msgid "Confirm Password"
 msgstr ""
 
 #: web/templates/admin_sso/login.html:43
@@ -500,19 +570,27 @@ msgstr ""
 msgid "Appointment booked Successfully!"
 msgstr ""
 
-#: web/templates/doctor.html:199 web/templates/login.html:200
-msgid "Appointment booked with!"
+#: web/templates/doctor.html:200 web/templates/login.html:200
+msgid "Appointment booked with: "
 msgstr ""
 
-#: web/templates/doctor.html:201 web/templates/login.html:202
+#: web/templates/doctor.html:208 web/templates/login.html:202
 msgid "Ok, Go to my Profile"
 msgstr ""
 
-#: web/templates/doctor.html:216 web/templates/login.html:217
+#: web/templates/doctor.html:223 web/templates/login.html:217
 msgid "Book Appointment"
 msgstr ""
 
-#: web/templates/home.html:26 web/templates/partials/header.html:45
+#: web/templates/doctors.html:11
+msgid "Search Doctor, Make an Appointment"
+msgstr ""
+
+#: web/templates/doctors.html:12
+msgid "Discover the best doctors, clinic & hospital the city nearest to you."
+msgstr ""
+
+#: web/templates/home.html:26 web/templates/partials/header.html:46
 msgid "Contact"
 msgstr ""
 
@@ -524,7 +602,7 @@ msgstr ""
 msgid ""
 "\n"
 "                    This project contains <i>Web services</i><br>\n"
-"                    for <u><i><b>Citas</b></i></u> Médicas\n"
+"                    for <u><i><b>Operations</b></i></u> in Grow Mobility\n"
 "                "
 msgstr ""
 
@@ -630,6 +708,18 @@ msgstr ""
 
 #: web/templates/partials/doctor_cards.html:60
 msgid "Book Now"
+msgstr ""
+
+#: web/templates/partials/header.html:28
+msgid "New Appointment"
+msgstr ""
+
+#: web/templates/partials/header.html:33 web/templates/partials/header.html:52
+msgid "My Account"
+msgstr ""
+
+#: web/templates/partials/header.html:35 web/templates/partials/header.html:54
+msgid "Login / Signup"
 msgstr ""
 
 #: web/templates/profile.html:4
@@ -797,11 +887,6 @@ msgstr ""
 
 #: web/templates/transactions/reset_password.html:27
 msgid "Enter and confirm your new password."
-msgstr ""
-
-#: web/templates/transactions/reset_password.html:85
-#: web/templates/transactions/views/password_reset_confirm.html:65
-msgid "Confirm Password"
 msgstr ""
 
 #: web/templates/transactions/reset_password.html:105
@@ -975,10 +1060,6 @@ msgid ""
 "                            Please try <a href=\"%(passwd_reset_url)s"
 "\"><b>Restore your password</b></a> again.\n"
 "                        "
-msgstr ""
-
-#: web/templates/transactions/views/password_reset_confirm.html:51
-msgid "Password"
 msgstr ""
 
 #: web/templates/transactions/views/password_reset_done.html:4

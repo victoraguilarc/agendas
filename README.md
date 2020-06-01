@@ -48,3 +48,6 @@ If you want to use it, run the following commands:
   * `npm install` Install nodejs dependencies
   * `gulp` generate `css`, `js`  production files.
    
+
+### REST API Docs
+[POSTMAN Collection](https://www.getpostman.com/collections/e34bf0e163f1d139bde8)
