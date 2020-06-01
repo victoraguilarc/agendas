@@ -1,10 +1,10 @@
-import datetime
-import time
+# -*- coding: utf-8 -*-
 
-from datetime import timedelta, datetime, date
+import time
+import datetime
 
 from django.utils import timezone
-
+from datetime import timedelta, datetime, date
 from apps.agendas.models import Appointment
 
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from django.db import IntegrityError
 
 from apps.agendas.selectors.doctor_profile import DoctorProfileSelector
