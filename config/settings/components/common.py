@@ -154,7 +154,7 @@ TEMPLATES = [{
 # See: http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
-DJANGO_HTDOCS_PATH = env('DJANGO_HTDOCS_PATH', default=join(PROJECT_PATH, 'assets'))
+DJANGO_HTDOCS_PATH = env('DJANGO_HTDOCS_PATH', default=join(PROJECT_PATH, 'public'))
 STATIC_ROOT = join(DJANGO_HTDOCS_PATH, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
