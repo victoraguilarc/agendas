@@ -73,7 +73,7 @@ loaddata:
 
 fixtures:
 	@echo "Loading fixtures..."
-	$(COMPOSE) run --rm django python manage.py loaddata users professionals
+	$(COMPOSE) run --rm django python manage.py loaddata users doctors
 
 dumpdata:
 	@echo "Getting fixtures..."

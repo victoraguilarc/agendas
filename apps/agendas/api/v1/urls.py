@@ -3,8 +3,9 @@
 from django.urls import path
 
 from apps.agendas.api.v1.views.appointments import AppointmentsViewSet
-from apps.agendas.api.v1.views.visitors import VisitorsViewSet
-from apps.agendas.api.v1.views.professionals import ProfessionalsViewSet
+from apps.agendas.api.v1.views.patients import PatientsViewSet
+from apps.agendas.api.v1.views.doctors import DoctorsViewSet
+
 
 app_name = 'agendas'
 
@@ -13,14 +14,14 @@ urlpatterns = [
 
     # >> For Visitors
     path(
-        'professionals/',
-        ProfessionalsViewSet.as_view({'get': 'list'}),
+        'doctors/',
+        DoctorsViewSet.as_view({'get': 'list'}),
         name='professionals',
     ),
 
     path(
         'me/appointments/',
-        VisitorsViewSet.as_view({'get': 'appointments'}),
+        PatientsViewSet.as_view({'get': 'appointments'}),
         name='scheduled-appointments',
     ),
 
@@ -40,19 +41,19 @@ urlpatterns = [
 
     # >> For Professionals
     path(
-        'professionals/<uuid:professional_uuid>/',
-        ProfessionalsViewSet.as_view({'get': 'retrieve'}),
-        name='professional',
+        'doctors/<uuid:doctor_uuid>/',
+        DoctorsViewSet.as_view({'get': 'retrieve'}),
+        name='doctor',
     ),
     path(
-        'professionals/<uuid:professional_uuid>/appointments/',
-        ProfessionalsViewSet.as_view({'get': 'appointments'}),
+        'doctors/<uuid:doctor_uuid>/appointments/',
+        DoctorsViewSet.as_view({'get': 'appointments'}),
         name='professional-appointments',
     ),
     path(
-        'professionals/<uuid:professional_uuid>/calendar/',
-        ProfessionalsViewSet.as_view({'get': 'calendar'}),
-        name='professional-appointments',
+        'doctors/<uuid:doctor_uuid>/calendar/',
+        DoctorsViewSet.as_view({'get': 'calendar'}),
+        name='doctor-calendar',
     ),
 
 

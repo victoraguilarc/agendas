@@ -10,10 +10,10 @@ from apps.contrib.models.mixins import TimeStampedModelMixin, UUIDPrimaryKeyMode
 
 
 class Appointment(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
-    agenda = models.ForeignKey(
-        'Agenda',
+    doctor = models.ForeignKey(
+        'agendas.DoctorProfile',
         on_delete=models.CASCADE,
-        verbose_name=_('Agenda'),
+        verbose_name=_('Doctor'),
     )
     visitor = models.ForeignKey(
         'accounts.User',
@@ -32,12 +32,17 @@ class Appointment(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
         choices=AppointmentSite.choices(),
         default=AppointmentSite.IN_PLACE,
     )
-    start_datetime = models.DateTimeField(
-        verbose_name=_('Start'),
+    date = models.DateField(
+        verbose_name=_('Date'),
     )
-    duration = models.PositiveIntegerField(
+    time = models.TimeField(
+        verbose_name=_('Time'),
+    )
+
+    consultation_duration = models.PositiveIntegerField(
         verbose_name=_('Duration'),
     )
+
     # this field is JSON to add more flexibility to appointments
     payload = JSONField(
         encoder=DjangoJSONEncoder,
@@ -48,7 +53,7 @@ class Appointment(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
     )
 
     def __str__(self):
-        return str(self.start_datetime)
+        return '{0} {1}'.format(self.date, self.time)
 
     class Meta:
         db_table = 'appointments'
@@ -56,3 +61,4 @@ class Appointment(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
         verbose_name_plural = _('Appointments')
         ordering = ['created_at']
         app_label = 'agendas'
+        unique_together = ('doctor', 'visitor', 'date', 'time')

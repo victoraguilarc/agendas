@@ -1,0 +1,171 @@
+[{
+	"model": "agendas.doctorprofile",
+	"pk": "20fde854-001d-416e-979b-5a7f1b22b94a",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. Roma",
+		"verified": true,
+		"user": 3,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "fee": "450.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "2684cd19-7eae-443f-9092-788320f82b8e",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Centro",
+		"verified": true,
+		"user": 7,
+    "start_time": "09:00",
+    "end_time": "12:00",
+    "fee": "500.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "26b160ac-5a74-4c46-954f-b86c5bbce547",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Polanco",
+		"verified": true,
+		"user": 10,
+    "start_time": "08:00",
+    "end_time": "15:00",
+    "fee": "480.0",
+    "consultation_duration": "60",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "61d7086a-cd50-4b98-9515-1a32945e62e3",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Roma Sur",
+		"verified": true,
+		"user": 9,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "fee": "400.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "82a1f032-8c5b-4d9e-9f2f-85805ca4cc3b",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Polanco",
+		"verified": true,
+		"user": 4,
+    "start_time": "08:00",
+    "end_time": "13:00",
+    "fee": "350.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "96e42b7d-39dc-4638-b4a4-181487e67267",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. Tlatelolco",
+		"verified": true,
+		"user": 5,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "fee": "450.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "aba6ac18-edae-4b40-81d1-3a7352f74bbe",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. Ju\u00e1rez",
+		"verified": true,
+		"user": 8,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "fee": "450.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "b934915d-cd6d-4830-95d9-c819c7939282",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. del Carmen",
+		"verified": true,
+		"user": 6,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "fee": "550.0",
+    "consultation_duration": "60",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "e9a40969-b4e4-4fce-963b-fe733abac94d",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. MSc. Pediatr\u00eda",
+		"location": "Col. del Carmen",
+		"verified": true,
+		"user": 11,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "fee": "450.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}, {
+	"model": "agendas.doctorprofile",
+	"pk": "f57696e4-d633-463a-aaad-9fad6fd8f286",
+	"fields": {
+		"created_at": "2020-05-25T07:21:26.512Z",
+		"updated_at": "2020-05-25T07:21:26.512Z",
+		"specialty": "pediatrician",
+		"title": "Dr. Medicina General y Pediatr\u00eda",
+		"location": "Col. Ju\u00e1rez",
+		"verified": true,
+		"user": 2,
+    "start_time": "08:00",
+    "end_time": "12:00",
+    "fee": "450.0",
+    "consultation_duration": "30",
+    "auto_confirmation": true
+	}
+}]

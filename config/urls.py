@@ -18,8 +18,6 @@ urlpatterns = [
     # Admin
     path(settings.ADMIN_URL, admin.site.urls),
 
-    # Landing Page
-    path('', TemplateView.as_view(template_name='home.html')),
 
     # Accounts
     path('api/', include('apps.accounts.api.urls', namespace='api-accounts')),
@@ -27,6 +25,7 @@ urlpatterns = [
 
     # Agendas
     path('api/', include('apps.agendas.api.urls', namespace='api-agendas')),
+    path('', include('apps.agendas.urls', namespace='agendas')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

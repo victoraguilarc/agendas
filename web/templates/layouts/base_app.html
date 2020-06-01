@@ -1,0 +1,64 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<title>{% block title %}{% endblock %} | Docs. de Cabecera</title>
+		<!-- Favicons -->
+		<link type="image/x-icon" href="{% static 'app/img/favicon.png' %}" rel="icon">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="{% static 'app/plugins/fontawesome/css/fontawesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'app/plugins/fontawesome/css/all.min.css' %}">
+
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="{% static 'app/js/html5shiv.min.js' %}"></script>
+			<script src="{% static 'app/js/respond.min.js' %}"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+      {% block content %}
+
+      {% endblock %}
+	   </div>
+	   <!-- /Main Wrapper -->
+
+		<!-- jQuery -->
+		<script src="{% static 'app/js/jquery.min.js' %}"></script>
+		<script src="{% static 'app/vendor/vue.min.js' %}"></script>
+		<script src="{% static 'app/vendor/axios.min.js' %}"></script>
+		<script src="{% static 'app/vendor/js.cookie.min.js' %}"></script>
+
+		<!-- Bootstrap Core JS -->
+		<script src="{% static 'app/js/popper.min.js' %}"></script>
+		<script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+
+		<!-- Slick JS -->
+		<script src="{% static 'app/js/slick.js' %}"></script>
+
+    <script>
+      const API_URL = '{{ project_domain }}';
+      const client = axios.create({
+        baseURL: '/api/v1',
+        timeout: 1000,
+        headers: {'X-CSRFToken': '{{ csrf_token }}'}
+      });
+    </script>
+
+		<!-- Custom JS -->
+		<script src="{% static 'app/js/script.js' %}"></script>
+    {% block extra_scripts %}{% endblock %}
+
+	</body>
+</html>

@@ -1,0 +1,69 @@
+{% load static i18n %}
+
+<section class="section section-doctor">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-header ">
+          <h2>Book Our Doctor</h2>
+          <p>Lorem Ipsum is simply dummy text </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for professional in professionals %}
+        <div class="col-lg-2">
+          <div class="profile-widget" style="margin-bottom: 2rem;">
+            <div class="doc-img">
+              <a href="doctor-profile.html">
+                <img class="img-fluid" alt="Professional" src="{% static 'app/img/doctors/doctor-01.jpg' %}">
+              </a>
+              <a href="javascript:void(0)" class="fav-btn">
+                <i class="far fa-bookmark"></i>
+              </a>
+            </div>
+            <div class="pro-content">
+              <h3 class="title">
+                <a href="doctor-profile.html">{{ professional.user.full_name }}</a>
+                {% if professional.verified %}
+                <i class="fas fa-check-circle verified"></i>
+                {% endif %}
+              </h3>
+              <p class="speciality">{{ professional.title }}</p>
+              <div class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <span class="d-inline-block average-rating">(17)</span>
+              </div>
+              <ul class="available-info">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> {{ professional.location }}
+                </li>
+                <li>
+                  <i class="far fa-money-bill-alt"></i>
+                  {% if professional.user.agenda %}
+                    {{ professional.user.agenda.fee }} MXN
+                  {% else %}
+                    {% trans "Not Available" %}
+                  {% endif%}
+                  <i class="fas fa-info-circle" data-toggle="tooltip" title="{% trans 'Price by Session' %}"></i>
+                </li>
+              </ul>
+              <div class="row row-sm">
+                <div class="col-12">
+                  <a href="{% url 'agendas:professional' professional_uuid=professional.uuid %}" class="btn view-btn">
+                    {% trans "Book Now" %}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

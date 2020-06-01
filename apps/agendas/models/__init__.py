@@ -1,4 +1,3 @@
-from .agenda import *
+from .doctor_profile import *
 from .appointment import *
-from .availability import *
 

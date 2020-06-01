@@ -33,8 +33,7 @@
 		"last_name": "Jurado",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -52,8 +51,7 @@
 		"last_name": "Arevalo",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -71,8 +69,7 @@
 		"last_name": "Piñero",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -90,8 +87,7 @@
 		"last_name": "Arcos",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -109,8 +105,7 @@
 		"last_name": "Araujo",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -128,8 +123,7 @@
 		"last_name": "Neira",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -147,8 +141,7 @@
 		"last_name": "Martinez",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -166,8 +159,7 @@
 		"last_name": "Aguilar",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -185,8 +177,7 @@
 		"last_name": "Peñaranda",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }, {
 	"model": "accounts.user",
@@ -204,7 +195,6 @@
 		"last_name": "Gutierrez",
 		"photo": "",
 		"lang": "es",
-		"groups": [],
-		"user_permissions": [86, 87, 88, 89, 94, 95, 96, 97, 90, 91, 92, 93]
+		"groups": []
 	}
 }]
