@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/
 
 
 from config.settings.components import env
-from config.settings.components.common import TEMPLATES
+from config.settings.components.common import TEMPLATES, INSTALLED_APPS
 
 DEBUG = False
 
@@ -60,3 +60,18 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = False
+
+
+EMAIL_SUBJECT_PREFIX = env('EMAIL_SUBJECT_PREFIX', default='[DC] ')
+INSTALLED_APPS += ['anymail']
+ANYMAIL = {
+    'MAILGUN_API_KEY': env('MAILGUN_API_KEY'),
+    'MAILGUN_WEBHOOK_SIGNING_KEY': env('MAILGUN_WEBHOOK_SIGNING_KEY'),
+    'MAILGUN_SENDER_DOMAIN': 'mg.xiberty.com',
+}
+
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='Appointment <no-reply@mg.xiberty.com>')
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+
+
+
