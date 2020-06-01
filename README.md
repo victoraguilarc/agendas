@@ -1,4 +1,4 @@
-## API StarterKit
+## Agendas
 
 
 ![styleguide](https://img.shields.io/badge/styleguide-flake8-blue)
@@ -9,27 +9,36 @@
 
   - [x] Registration
   - [x] Autthentication
-  - [x] Social Networks Support (Facebook/Google).
+  - [x] Support for Facebook and  Google(TODO).
+  - [x] Appointment Booking
+  - [x] Appointments Review
    
-
-## Development
-
-#### Technologies
+### Technologies
 
   * [Django](https://www.djangoproject.com/)
   * [Django Rest Framework](http://www.django-rest-framework.org/)
+  * [VueJS](https://vuejs.org/)
+  
+### Run locally (for development)
+First you need to have installed `git`, `docker`, `ssh`, `make` and and a good `terminal`.
 
-You need to have installed `git`, `docker`, `ssh` and and a good `terminal`.
-
-#### Basic commands
-  * `make build` build the images for development. 
-  * `make server` run dev server.
-  * `make django` enable deebugging server `debug`.
+  1. `git clone git@github.com:victoraguilarc/agendas.git`
+  2. [Download](https://drive.google.com/file/d/1slmIV_BTrkt7AdlC37lGLJ0cAxnv7YCe/view?usp=sharing) `.envs` folder and put it in the root of project, it contains `dev`, `test` subfolders with a layout of the environment variables. 
+  3. `make build` builds the images for development. 
+  4. `make migrate` creates database and tables 
+  5. `make fixtures` loads testing data.
+  6. `make up` runs development server at `http://localhost:8000`
+  
+### Other useful commands
+  * `make debug` enable deebugging server `debug`.
   * `make migrations` run django makemigrations command
   * `make migrate` run django migrate command
   * `make superuser` make a superuserfor develoment
+  * `make isort` Fix posible import issues
+  * `make test` Run the tests with pytest
 
-#### Minimal Frontend
+### Frontend development
+
 This projeect contains minimal frontend to some transactional fallback windows specially.
 If you want to use it, run the following commands:
 
@@ -37,8 +46,3 @@ If you want to use it, run the following commands:
   * `npm install` Install nodejs dependencies
   * `gulp` generate `css`, `js`  production files.
    
-#### Pre commit actions
-  * `make isort` Fix posible import issues
-  * `make lint` Check code quality based on PEP-8 styleguidees
-  * `make tests` Run the tests with unittest
-  * `make pytest` Run the tests with pytest
