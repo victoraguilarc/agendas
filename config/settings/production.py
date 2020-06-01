@@ -66,4 +66,4 @@ SECURE_SSL_REDIRECT = False
 
 # DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 # STATICFILES_STORAGE = 'django_s3_storage.storage.StaticS3Storage'
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

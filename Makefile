@@ -191,6 +191,8 @@ compile_locales:
 
 production_up:
 	@echo "Server up..."
+	docker pull vicobits/yema-challenge:latest
+	docker-compose -f docker-compose.prod.yml run --rm django /post-build
 	docker-compose -f docker-compose.prod.yml up
 
 report_coverage:
