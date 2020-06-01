@@ -25,7 +25,7 @@
 			<script src="{% static 'app/js/respond.min.js' %}"></script>
 		<![endif]-->
 	</head>
-	<body>
+	<body {% block body_class %}{% endblock %}>
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">

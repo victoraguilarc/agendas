@@ -13,8 +13,6 @@ from django.utils.translation import ugettext_lazy as _
 # ------------------------------------------------------------------------------
 ADMIN_URL = env('DJANGO_ADMIN_URL', default='admin/')
 AUTH_USER_MODEL = 'accounts.User'
-LOGIN_REDIRECT_URL = '/admin/'
-LOGIN_URL = 'account_login'
 USERNAME_BLACKLIST = ['vicobits', 'admin']
 
 DJANGO_APPS: Tuple[str, ...] = (
@@ -54,6 +52,9 @@ THIRD_PARTY_APPS: Tuple[str, ...] = (
     'import_export',
     'admin_sso',
 
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 )
 
 LOCAL_APPS: Tuple[str, ...] = (
@@ -194,6 +195,7 @@ AUTHENTICATION_BACKENDS = (
     'admin_sso.auth.DjangoSSOAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
     'apps.contrib.auth_backends.SimpleEmailBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 # EXTRA CONFIGURATION
@@ -234,3 +236,24 @@ PROJECT_OWNER_DOMAIN = PROJECT_HOSTNAME
 PROJECT_DESCRIPTION = 'Django Template with steroids'
 PROJECT_SUPPORT_PHONE = '(+52) 550011223344'
 PROJECT_TERMS_URL = '{0}/terms'.format(PROJECT_HOSTNAME)
+
+# ALLAUTH CONFIGURATION
+# ------------------------------------------------------------------------------
+# Some really nice defaults
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # mandatory, optional, none
+ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = False
+ACCOUNT_LOGIN_ON_PASSWORD_RESET = False
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_USERNAME_BLACKLIST = ["vicobits", "admin"]
+
+ACCOUNT_ADAPTER = 'apps.accounts.adapters.AccountAdapter'
+LOGIN_REDIRECT_URL = '/profile/'
+LOGIN_URL = 'account_login'
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_USERNAME_REQUIRED = False
+

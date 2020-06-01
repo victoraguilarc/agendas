@@ -72,8 +72,11 @@ new Vue({
       .then(function (response) {
         self.week_days = response.data.week_days;
         self.successAppointment = response.data.appointment;
-        self.successModal.modal('show');
-        self.selected = { date: null, time: null };
+        console.log(self.successAppointment);
+        Vue.nextTick(function () {
+          self.successModal.modal('show');
+          self.selected = { date: null, time: null };
+        })
       })
       .catch(function (error) {
         if (!!error.response.data.message)  toastr.error(error.response.data.message, 'Error!')

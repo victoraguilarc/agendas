@@ -1,0 +1,128 @@
+{% extends 'layouts/base_sign.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'SignUp' %}{% endblock %}
+{% block sign_content %}
+  <div class="row" style="padding-bottom: 2rem;">
+    <div class="col-md-8 offset-md-2">
+
+      <!-- Login Tab Content -->
+      <div class="account-content">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 col-lg-6 login-left">
+            <img src="{% static 'app/img/login-banner.png' %}" class="img-fluid" alt="Doccure Login">
+          </div>
+          <div class="col-md-12 col-lg-4 login-right">
+            <div class="login-header">
+              <h3>{% trans 'SignUp' %}</h3>
+            </div>
+
+            <form action="{% url 'account_signup' %}" method="post">
+              {% csrf_token %}
+              {% if form.non_field_errors %}
+                <div class="alert alert-primary" role="alert">
+                  {% for error in form.non_field_errors %}
+                    <span>{{ error | escape }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <div class="form-group form-focus {% if form.username.errors %}has-error{% endif %}">
+                <input type="text" class="form-control floating"
+                       name="username" id="id_username"
+                       placeholder="{% trans 'Username' %}"
+                       value="{% if form.username.value %}{{ form.username.value }}{% endif %}">
+                <label class="focus-label">{% trans 'Username' %}</label>
+                {% if form.username.errors %}
+                  <span class="help-block">
+                    {% for error in form.username.errors %}
+                        <span>{{ error|escape }}</span>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </div>
+
+              <div class="form-group form-focus {% if form.email.errors %}has-error{% endif %}">
+                <input type="email" class="form-control floating"
+                       name="email" id="id_email"
+                       placeholder="{% trans 'Email' %}"
+                       value="{% if form.email.value %}{{ form.email.value }}{% endif %}">
+                <label class="focus-label">{% trans 'Email' %}</label>
+                {% if form.email.errors %}
+                  <span class="help-block">
+                    {% for error in form.email.errors %}
+                        <span>{{ error|escape }}</span>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </div>
+
+              <div class="form-group form-focus {% if form.password1.errors %}has-error{% endif %}">
+                <input type="password" class="form-control floating"
+                       name="password1" placeholder="{% trans 'Password' %}"
+                       value="{% if form.password1.value %}{{ form.password1.value }}{% endif %}" >
+                <label class="focus-label">{% trans 'Password' %}</label>
+
+                {% if form.password1.errors %}
+                  <span class="help-block">
+                    {% for error in form.password1.errors %}
+                      <span>{{ error|escape }}</span>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </div>
+
+              <div class="form-group form-focus {% if form.password2.errors %}has-error{% endif %}">
+                <input type="password" class="form-control floating"
+                       name="password2" placeholder="{% trans 'Confirm Password' %}"
+                       value="{% if form.password2.value %}{{ form.password2.value }}{% endif %}" >
+                <label class="focus-label">{% trans 'Confirm Password' %}</label>
+
+                {% if form.password2.errors %}
+                  <span class="help-block">
+                    {% for error in form.password2.errors %}
+                      <span>{{ error|escape }}</span>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </div>
+
+              <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">
+                {% trans 'Register' %}
+              </button>
+              <div class="login-or">
+                <span class="or-line"></span>
+                <span class="span-or">or</span>
+              </div>
+              <div class="row form-row social-login">
+                <div class="col-6">
+                  <a href="#" class="btn btn-facebook btn-block">
+                    <i class="fab fa-facebook-f mr-1"></i> Login
+                  </a>
+                </div>
+                <div class="col-6">
+                  <a href="#" class="btn btn-google btn-block">
+                    <i class="fab fa-google mr-1"></i> Login
+                  </a>
+                </div>
+              </div>
+
+              <div class="text-center dont-have">
+                {% trans 'Don’t have an account?' %}
+                <a href="{% url 'account_signup' %}">
+                  {% trans 'Register' %}
+                </a>
+              </div>
+
+              {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /Login Tab Content -->
+
+    </div>
+  </div>
+{% endblock %}

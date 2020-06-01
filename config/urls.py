@@ -18,6 +18,7 @@ urlpatterns = [
     # Admin
     path(settings.ADMIN_URL, admin.site.urls),
 
+    path('accounts/', include('allauth.urls')),
 
     # Accounts
     path('api/', include('apps.accounts.api.urls', namespace='api-accounts')),

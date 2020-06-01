@@ -8,6 +8,7 @@ django==3.0.5
 #
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
 whitenoise==5.0.1  # https://github.com/evansd/whitenoise
+django-allauth==0.41.0  # https://github.com/pennersr/django-allauth
 
 #
 # F O R M S

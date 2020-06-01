@@ -196,7 +196,14 @@
                   <div class="success-cont">
                     <i class="fas fa-check"></i>
                     <h3>{% trans 'Appointment booked Successfully!' %}</h3>
-                    <p>{% trans 'Appointment booked with: ' %}<strong>Dr. Darren Elder</strong><br> on <strong>12 Nov 2019 5:00PM to 6:00PM</strong></p>
+                    <p v-if="!!successAppointment">
+                      {% trans 'Appointment booked with: ' %}
+
+                      {% verbatim %}
+                      <strong>{{ successAppointment.doctor.full_name }}</strong><br> on
+                      <strong>{{ successAppointment.date }}, {{ successAppointment.time }}</strong>
+                      {% endverbatim %}
+                    </p>
                     <a href="/" class="btn btn-primary view-inv-btn" @click.prevent="handleGoProfile">
                       {% trans 'Ok, Go to my Profile' %}
                     </a>

@@ -1,5 +1,6 @@
 import json
 
+from braces.views import LoginRequiredMixin
 from django.views.generic import TemplateView, DetailView
 
 from apps.agendas.models import DoctorProfile
@@ -16,7 +17,7 @@ class DoctorsView(TemplateView):
         return context
 
 
-class DoctorProfileAgendaView(DetailView):
+class DoctorProfileAgendaView(LoginRequiredMixin, DetailView):
     template_name = 'doctor.html'
     model = DoctorProfile
     slug_field = 'uuid'

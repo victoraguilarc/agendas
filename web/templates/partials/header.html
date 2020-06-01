@@ -25,14 +25,15 @@
       </div>
       <ul class="main-nav">
         <li class="active">
-          <a href="{% url 'agendas:doctors' %}">Agendar</a>
-        </li>
-        <li>
-          <a href="{% url 'agendas:profile' %}">{% trans 'Appointments' %}</a>
+          <a href="{% url 'agendas:doctors' %}">+ {% trans 'New Appointment' %}</a>
         </li>
 
         <li class="login-link">
-          <a href="login.html">Login / Signup</a>
+          {% if user.is_authenticated %}
+            <a href="{% url 'agendas:profile' %}">{% trans 'My Account' %}</a>
+          {% else %}
+            <a href="{% url 'account_login' %}">{% trans 'Login / Signup' %}</a>
+          {% endif %}
         </li>
       </ul>
     </div>
@@ -43,11 +44,15 @@
         </div>
         <div class="header-contact-detail">
           <p class="contact-header">{% trans 'Contact' %}</p>
-          <p class="contact-info-header"> +1 315 369 5943</p>
+          <p class="contact-info-header"> +52 5544586680</p>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link header-login" href="/">login / Signup </a>
+        {% if user.is_authenticated %}
+            <a class="nav-link header-login" href="{% url 'agendas:profile' %}">{% trans 'My Account' %}</a>
+        {% else %}
+          <a class="nav-link header-login" href="{% url 'account_login' %}">{% trans 'Login / Signup' %}</a>
+        {% endif %}
       </li>
     </ul>
   </nav>
