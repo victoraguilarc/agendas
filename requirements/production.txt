@@ -1,3 +1,5 @@
+-r common.txt
+
 # WSGI HANDLER
 # ------------------------------------------------
 gunicorn==20.0.4  # https://github.com/benoitc/gunicorn
