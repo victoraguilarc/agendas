@@ -40,6 +40,7 @@ class AppointmentService(object):
             'doctor': appointment.doctor.user.full_name,
             'date': appointment.date,
             'time': appointment.time,
+            'note': appointment.note,
             'action_url': action_url,
         }
         AppointmentEmailMessage(context=context).send(to=appointment.visitor.email)

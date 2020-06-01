@@ -43,6 +43,11 @@ class Appointment(UUIDPrimaryKeyModelMixin, TimeStampedModelMixin):
         verbose_name=_('Duration'),
     )
 
+    note = models.TextField(
+        verbose_name=_('Note'),
+        blank=True, null=True
+    )
+
     # this field is JSON to add more flexibility to appointments
     payload = JSONField(
         encoder=DjangoJSONEncoder,

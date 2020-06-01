@@ -8,11 +8,18 @@ Appointment booked with! Dr. {{ doctor }}
 on {{ date }} at {{ time }}
 
 Check your appointments in the following link.
-
+{% endblocktrans %}
 
      {{action_url}}
 
 
+{% if note %}
+  NOTE:
+
+  {{ note }}
+{% endif %}
+
+{% blocktrans %}
 If you did not request this simply ignore this email or
 report it to {{project_support_email}}
 
