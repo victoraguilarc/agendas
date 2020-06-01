@@ -2,37 +2,6 @@
 
 from django.utils.translation import ugettext_lazy as _
 
-# >> Providers
-
-OPS_SERVER_UNAVAILABLE = {
-    'code': 'ops.ServerUnavailable',
-    'detail': _('Ops Server is unavailable.'),
-}
-
-INVALID_OPS_SERVER_REQUEST = {
-    'code': 'ops.InvalidRequest',
-    'detail': _('Ops Server invalid request.'),
-}
-
-SYNC_USER_ERROR = {
-    'code': 'ops.SyncUserError',
-    'detail': _('Sync User error.'),
-}
-SYNC_BASE_ERROR = {
-    'code': 'ops.SyncBaseError',
-    'detail': _('Sync Base error.'),
-}
-
-CORE_SERVER_UNAVAILABLE = {
-    'code': 'core.ServerUnavailable',
-    'detail': _('Core Server is unavailable.'),
-}
-
-MAP_SERVER_UNAVAILABLE = {
-    'code': 'maps.ServerUnavailable',
-    'detail': _('Maps Server is unavailable.'),
-}
-
 # >> SNS
 
 NOT_SNS_REQUEST = {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 15:28+0000\n"
+"POT-Creation-Date: 2020-06-01 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -445,46 +445,22 @@ msgid "Successful operation!"
 msgstr ""
 
 #: apps/contrib/response_codes.py:9
-msgid "Ops Server is unavailable."
-msgstr ""
-
-#: apps/contrib/response_codes.py:14
-msgid "Ops Server invalid request."
-msgstr ""
-
-#: apps/contrib/response_codes.py:19
-msgid "Sync User error."
-msgstr ""
-
-#: apps/contrib/response_codes.py:23
-msgid "Sync Base error."
-msgstr ""
-
-#: apps/contrib/response_codes.py:28
-msgid "Core Server is unavailable."
-msgstr ""
-
-#: apps/contrib/response_codes.py:33
-msgid "Maps Server is unavailable."
-msgstr ""
-
-#: apps/contrib/response_codes.py:40
 msgid "This resource is forbidden for not SNS requests."
 msgstr ""
 
-#: apps/contrib/response_codes.py:45
+#: apps/contrib/response_codes.py:14
 msgid "This method is not allowed for SNS requests"
 msgstr ""
 
-#: apps/contrib/response_codes.py:50
+#: apps/contrib/response_codes.py:19
 msgid "Invalid SNS Signature."
 msgstr ""
 
-#: apps/contrib/response_codes.py:55
+#: apps/contrib/response_codes.py:24
 msgid "SNS endpoint subscribe failed."
 msgstr ""
 
-#: apps/contrib/response_codes.py:60
+#: apps/contrib/response_codes.py:29
 msgid "SNS endpoint subscribe confirmed."
 msgstr ""
 
@@ -548,7 +524,7 @@ msgstr ""
 msgid ""
 "\n"
 "                    This project contains <i>Web services</i><br>\n"
-"                    for <u><i><b>Operations</b></i></u> in Grow Mobility\n"
+"                    for <u><i><b>Citas</b></i></u> Médicas\n"
 "                "
 msgstr ""
 
@@ -686,7 +662,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"            Appointment booked with!<br>\n"
+"            Appointment booked with: <br>\n"
 "            <b>Dr. %(doctor)s</b> on <b>%(date)s - %(time)s</b>\n"
 "\n"
 "            Check your appointments in the following link.\n"
@@ -720,7 +696,7 @@ msgid ""
 "Your Appointment\n"
 "\n"
 "\n"
-"Appointment booked with! Dr. %(doctor)s\n"
+"Appointment booked with: Dr. %(doctor)s\n"
 "on %(date)s at %(time)s\n"
 "\n"
 "Check your appointments in the following link.\n"
