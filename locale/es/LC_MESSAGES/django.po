@@ -833,7 +833,7 @@ msgstr ""
 
 #: web/templates/transactions/emails/reset_password/message.html:30
 msgid "RESET MY PASSWORD"
-msgstr ""
+msgstr "RESTAURAR MI CONTRASEÑA"
 
 #: web/templates/transactions/emails/reset_password/message.txt:3
 #, python-format
@@ -859,27 +859,27 @@ msgstr ""
 
 #: web/templates/transactions/reset_password.html:14
 msgid "Account Inactive!"
-msgstr ""
+msgstr "Cuenta Inactiva!"
 
 #: web/templates/transactions/reset_password.html:17
 msgid "Incorrect Link!"
-msgstr ""
+msgstr "Enlace Incorrecto"
 
 #: web/templates/transactions/reset_password.html:27
 msgid "Enter and confirm your new password."
-msgstr ""
+msgstr "Presionar Enter y confirmar un nueo"
 
 #: web/templates/transactions/reset_password.html:85
 #: web/templates/transactions/views/password_reset_confirm.html:65
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmar Contraseña"
 
 #: web/templates/transactions/reset_password.html:105
 #: web/templates/transactions/views/password_reset_confirm.html:4
 #: web/templates/transactions/views/password_reset_confirm.html:17
 #: web/templates/transactions/views/password_reset_confirm.html:79
 msgid "Change Password"
-msgstr ""
+msgstr "Cambiar contraseña"
 
 #: web/templates/transactions/reset_password.html:111
 #, python-format
@@ -903,11 +903,11 @@ msgstr ""
 
 #: web/templates/transactions/reset_password_done.html:5
 msgid "Restore Changed"
-msgstr ""
+msgstr "Restaurar Contraseña"
 
 #: web/templates/transactions/reset_password_done.html:10
 msgid "Password Changed!"
-msgstr ""
+msgstr "Contraseña cambiada"
 
 #: web/templates/transactions/reset_password_done.html:18
 msgid ""
@@ -918,7 +918,7 @@ msgstr ""
 
 #: web/templates/transactions/reset_password_done.html:25
 msgid "Return"
-msgstr ""
+msgstr "Retornar"
 
 #: web/templates/transactions/reset_password_done.html:31
 #, python-format
@@ -937,11 +937,11 @@ msgstr ""
 #: web/templates/transactions/views/email_verification_sent.html:16
 #: web/templates/transactions/views/password_reset_from_key_done.html:4
 msgid "Confirmation Sent"
-msgstr ""
+msgstr "Confirmación enviada"
 
 #: web/templates/transactions/views/account_inactive.html:16
 msgid "Account deactivated"
-msgstr ""
+msgstr "Cuenta Desactivadas"
 
 #: web/templates/transactions/views/account_inactive.html:21
 #, python-format
@@ -960,7 +960,7 @@ msgstr ""
 #: web/templates/transactions/views/password_reset_done.html:42
 #: web/templates/transactions/views/password_reset_from_key_done.html:31
 msgid "Go to start"
-msgstr ""
+msgstr "Ir al Inicio"
 
 #: web/templates/transactions/views/account_inactive.html:38
 #: web/templates/transactions/views/email_confirm.html:58
@@ -969,7 +969,7 @@ msgstr ""
 #: web/templates/transactions/views/password_reset_done.html:49
 #: web/templates/transactions/views/password_reset_from_key_done.html:39
 msgid "You can too: "
-msgstr ""
+msgstr "Tu también puedes: "
 
 #: web/templates/transactions/views/account_inactive.html:40
 #: web/templates/transactions/views/email_confirm.html:60
@@ -978,7 +978,7 @@ msgstr ""
 #: web/templates/transactions/views/password_reset_done.html:51
 #: web/templates/transactions/views/password_reset_from_key_done.html:24
 msgid "Log in"
-msgstr ""
+msgstr "Iniciar Sessión"
 
 #: web/templates/transactions/views/account_inactive.html:44
 #: web/templates/transactions/views/email_confirm.html:64
@@ -987,7 +987,7 @@ msgstr ""
 #: web/templates/transactions/views/password_reset_done.html:55
 #: web/templates/transactions/views/password_reset_from_key_done.html:41
 msgid "Create an account"
-msgstr ""
+msgstr "Crear mi cuenta"
 
 #: web/templates/transactions/views/email_confirm.html:27
 #, python-format
@@ -1002,7 +1002,7 @@ msgstr ""
 
 #: web/templates/transactions/views/email_confirm.html:37
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #: web/templates/transactions/views/email_confirm.html:42
 msgid ""
@@ -1015,7 +1015,7 @@ msgstr ""
 
 #: web/templates/transactions/views/email_confirm.html:50
 msgid "Back to Start"
-msgstr ""
+msgstr "Vover al Inicio"
 
 #: web/templates/transactions/views/email_verification_sent.html:21
 #, python-format
@@ -1034,7 +1034,7 @@ msgstr ""
 #: web/templates/transactions/views/password_reset_confirm.html:4
 #: web/templates/transactions/views/password_reset_confirm.html:17
 msgid "Incorrect Link"
-msgstr ""
+msgstr "Enlace Incorrecto"
 
 #: web/templates/transactions/views/password_reset_confirm.html:26
 #, python-format
@@ -1046,18 +1046,24 @@ msgid ""
 "\"><b>Restore your password</b></a> again.\n"
 "                        "
 msgstr ""
+"\n"
+"                            El enlace de restauración es <b> invalido </b> posiblemente "
+"porque alguien más ya lo ha usado.\n"
+"                            Por favor  try <a href=\"%(passwd_reset_url)s"
+"\"><b>Restore your password</b></a> again.\n"
+"                        "
 
 #: web/templates/transactions/views/password_reset_confirm.html:51
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: web/templates/transactions/views/password_reset_done.html:4
 msgid "Password reset"
-msgstr ""
+msgstr "Restaurar Contraseña"
 
 #: web/templates/transactions/views/password_reset_done.html:25
 msgid "You are logged in as"
-msgstr ""
+msgstr "Iniciaste sesión como"
 
 #: web/templates/transactions/views/password_reset_done.html:31
 #, python-format
@@ -1075,12 +1081,12 @@ msgstr ""
 
 #: web/templates/transactions/views/password_reset_from_key_done.html:16
 msgid "Password Changed"
-msgstr ""
+msgstr "Contraseña cambiada"
 
 #: web/templates/transactions/views/password_reset_from_key_done.html:22
 msgid "Your password has been changed successfully, you can now"
-msgstr ""
+msgstr "Tu contraseña ha sido actualizada con exito"
 
 #: web/templates/transactions/views/password_reset_from_key_done.html:25
 msgid "with your new credentials."
-msgstr ""
+msgstr "Con tus nuevas credenciales"
